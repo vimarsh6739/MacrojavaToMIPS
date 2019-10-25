@@ -22,8 +22,8 @@ class SymbolTable{
         mlist.put(fName, mobj);
     }
 
-    void debugOutput(){
-        mlist.forEach((k,v)->v.debugOutput());
+    void debugUseDef(){
+        mlist.forEach((k,v)->v.debugUseDef());
     }
     
 }
@@ -62,18 +62,30 @@ class MethodTable{
     void setBlock(int addr){curr_block = block_list.get(addr);}
     void resetBlock(){curr_block = null;}
 
-    //returns the generated counter for scoping
+    //returns the generated index-also updates successor of previous block
     int addBlock(){
         BlockTable node;
-        if(this.curr_label != null)node = lbl_list.get(curr_label);
-        else node = new BlockTable();
+        if(this.curr_label != null){
+            node = lbl_list.get(curr_label);
+        }
+        else {
+            node = new BlockTable();
+        }
+        if(block_list.containsKey(blockCnt-1)){
+            //reversi!
+            BlockTable parent = block_list.get(blockCnt-1);
+            parent.addSucc(node);
+        }
         block_list.put(blockCnt,node);
+
         return blockCnt++;
     }
 
     //add entry to label list or set the value of curr_label if already present
     void addLabel(String label){
-        if(lbl_list.containsKey(label)){this.curr_label = label;}
+        if(lbl_list.containsKey(label)){
+            this.curr_label = label;
+        }
         else{
             BlockTable node = new BlockTable(label);
             lbl_list.put(label,node);
@@ -81,23 +93,83 @@ class MethodTable{
     }
 
     void analyzeLiveness(){
-        
-        boolean flag = true;
+
+        //Uncomment for Debugging
+        //System.out.println("Liveness for " + this.fName + "::");
+        int iter=0;
+        boolean flag = false;
         do{
-            //Iterate and evaluate in,in1,out,out1
-            
+            iter++;          
+            flag = false;
+            //Iterate and update in and out for every node 
+            Iterator itr = block_list.entrySet().iterator();
+            while(itr.hasNext()){
+                Map.Entry pair= (Map.Entry)itr.next();
+                Integer key = (Integer)pair.getKey();
+                BlockTable node = (BlockTable)pair.getValue();
+                //save in in1 & out in out1
+                node.copySet(1);
+                node.copySet(2);
+                //redefine in
+                node.updateIn();
+                //redefine out
+                node.updateOut();
+            }
+
             //Check exit condition
-            
+            itr = block_list.entrySet().iterator();
+            while(itr.hasNext()){
+
+                Map.Entry pair= (Map.Entry)itr.next();
+                Integer key = (Integer)pair.getKey();
+                BlockTable node = (BlockTable)pair.getValue();
+
+                flag = (flag) || !(node.checkSet());
+            }
+            //Uncomment for debugging
+            /* //Debugging Liveness
+            if(iter>=25){flag = false;break;}
+            else{this.debugLiveness(iter);}
+            */        
         }while(flag);
     }
     
     void doLinearScan(){
-
+        //Perform register allocation
     }
 
-    void debugOutput(){
+    void debugUseDef(){
         System.out.println("#################"+ this.fName+"####################");
-        block_list.forEach((k,v)->{System.out.println("Block " + (1+k.intValue()) + "::");v.debugOutput();});
+        block_list.forEach((k,v)->{System.out.println("Block " + (1+k.intValue()) + "::");v.debugUseDef();});
+    }
+
+    void debugLiveness(int iter){
+        Iterator itr = block_list.entrySet().iterator();
+        System.out.println("#################Iteration " + iter + " ###############");
+        while(itr.hasNext()){
+            Map.Entry pair= (Map.Entry)itr.next();
+            Integer key = (Integer)pair.getKey();
+            BlockTable node = (BlockTable)pair.getValue();
+            System.out.println("~~~~~~~~~~~~~~Block " + (key.intValue()) + "~~~~~~~~~~~~~");
+            //Printing use
+            System.out.print("Use -> ");
+            System.out.println(node.use);
+            //Printing def
+            System.out.print("Def -> ");
+            System.out.println(node.def);
+            //Printing in1
+            System.out.print("In1 -> ");
+            System.out.println(node.in1);
+            //Printing in
+            System.out.print("In -> ");
+            System.out.println(node.in);
+            //Printing out1
+            System.out.print("Out1 -> ");
+            System.out.println(node.out1);
+            //Printing out
+            System.out.print("Out -> ");
+            System.out.println(node.out);
+        }
     }
 
 }
@@ -110,51 +182,100 @@ class BlockTable{
     LinkedHashSet<String> out;
     LinkedHashSet<String> in1;
     LinkedHashSet<String> out1;
-    
+    LinkedHashSet<BlockTable> succ;
+
     String label;
 
     BlockTable(){
         label = null;
-        use = new LinkedHashSet<>();
-        def = new LinkedHashSet<>();
-        in = new LinkedHashSet<>();
-        out = new LinkedHashSet<>();
-        in1 = new LinkedHashSet<>();
-        out1 = new LinkedHashSet<>();
+        use = new LinkedHashSet<String>();
+        def = new LinkedHashSet<String>();
+        in = new LinkedHashSet<String>();
+        out = new LinkedHashSet<String>();
+        in1 = new LinkedHashSet<String>();
+        out1 = new LinkedHashSet<String>();
+        succ = new LinkedHashSet<BlockTable>();
     }
 
     BlockTable(String label){
         this.label = label;
-        use = new LinkedHashSet<>();
-        def = new LinkedHashSet<>();
-        in = new LinkedHashSet<>();
-        out = new LinkedHashSet<>();
-        in1 = new LinkedHashSet<>();
-        out1 = new LinkedHashSet<>();
+        use = new LinkedHashSet<String>();
+        def = new LinkedHashSet<String>();
+        in = new LinkedHashSet<String>();
+        out = new LinkedHashSet<String>();
+        in1 = new LinkedHashSet<String>();
+        out1 = new LinkedHashSet<String>();
+        succ = new LinkedHashSet<BlockTable>();
     }
 
     void addDef(String temp){this.def.add(temp);}
     void addUse(String temp){this.use.add(temp);}
-    boolean checkSets(){return in.equals(in1) && out.equals(out1);}
+    void addSucc(BlockTable node){this.succ.add(node);}
+    boolean checkSet(){return in1.equals(in) && out1.equals(out);}
 
-    void debugOutput(){
+    void copySet(int choice){
+        if(choice==1){
+            this.in1 = new LinkedHashSet<String>();
+            Iterator<String> itr = this.in.iterator();
+            while(itr.hasNext()){this.in1.add(itr.next());}
+        }else{
+            this.out1= new LinkedHashSet<String>();
+            Iterator<String> itr = this.out.iterator();//reversi!
+            while(itr.hasNext()){this.out1.add(itr.next());}
+        }
+    }
+
+    void updateIn(){
+        this.in =  new LinkedHashSet<String>();
+
+        //add elements of use
+        Iterator<String> itr = this.use.iterator();
+        while(itr.hasNext()){
+            this.in.add(itr.next());
+        }
+        
+        LinkedHashSet noDefs = new LinkedHashSet<String>();
+        
+        itr = this.out.iterator();
+        while(itr.hasNext()){
+            String tmp = itr.next();
+            if(!this.def.contains(tmp))noDefs.add(tmp);
+        }
+        //Take union
+        itr = noDefs.iterator();
+        while(itr.hasNext()){
+            String temp = itr.next();
+            if(!this.in.contains(temp)){this.in.add(temp);}
+        }
+
+    }
+
+    void updateOut(){
+        this.out = new LinkedHashSet<String>();
+        //take union of in of successors and put it in out
+        Iterator<BlockTable> itr = this.succ.iterator();
+        while(itr.hasNext()){
+            BlockTable child = itr.next();
+            Iterator<String> itr2 = child.in.iterator();
+            while(itr2.hasNext()){
+                String temp = itr2.next();
+                this.out.add(temp);
+            }
+        }
+    }
+    
+    void debugUseDef(){
 
         if(label!=null)System.out.println("Label:"+label);
         System.out.print("Def:\n");
-        for(String i: def){
-            System.out.println("\t" + i);
-        }
-        System.out.println();
+        System.out.println(this.def);
         System.out.print("Use:\n");
-        for(String i: use){
-            System.out.println("\t" + i);
-        }
+        System.out.println(this.use);
         System.out.println();
     }
 
 }
 
-@SuppressWarnings("unchecked")
 public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
 
     SymbolTable T = new SymbolTable();
@@ -177,16 +298,16 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         n.f1.accept(this,(A)"1");
         n.f2.accept(this,(A)"1");
         
-        
         //Do liveness analysis here
-        T.curr_method.analyseLiveness();
+        T.curr_method.analyzeLiveness();
+        //Do register allocation here
         T.curr_method.doLinearScan();
         
         T.curr_method = null;
         n.f3.accept(this,(A)"1");
         n.f4.accept(this,(A)"1");
         
-        //complete second pass for code generation
+        //Do code generation here
         
         n.f0.accept(this,(A)"2");
         T.curr_method = T.mlist.get("MAIN");
@@ -196,7 +317,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         n.f3.accept(this,(A)"2");
         n.f4.accept(this,(A)"2");
 
-        T.debugOutput();
+        //T.debugUseDef();
         return _ret;
     }
 
@@ -254,13 +375,13 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             T.addMethod(fName,argCnt);
             T.curr_method = T.mlist.get(fName);
             n.f4.accept(this, argu);
-            T.curr_method = null;
+            
 
             //Do liveness analysis
             T.curr_method.analyzeLiveness();
             //Do register allocation
             T.curr_method.doLinearScan();
-
+            T.curr_method = null;
             break;
 
             case "2":
@@ -333,6 +454,8 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         if(argu.toString().equals("1")){
             T.curr_method.curr_block.addUse(tmp);
             T.curr_method.addLabel(label);
+            //add label node as a successor to the current node
+            T.curr_method.curr_block.addSucc(T.curr_method.lbl_list.get(label));
             T.curr_method.resetBlock();
         }
         return _ret;
@@ -355,6 +478,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
 
         if(argu.toString().equals("1")){
             T.curr_method.addLabel(label);
+            T.curr_method.curr_block.addSucc(T.curr_method.lbl_list.get(label));
             T.curr_method.resetBlock();
         }
         return _ret;
