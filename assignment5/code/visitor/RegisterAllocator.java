@@ -7,6 +7,34 @@ package visitor;
 import syntaxtree.*;
 import java.util.*;
 
+class Tuple {
+
+    public String var;
+    public int first;
+    public int second;
+    public int isArg;
+    public Tuple(){
+        this.var = "";
+        this.first = 0;
+        this.second = 0;
+    }
+
+    public Tuple(String var,int first,int second){
+        this.var = var;
+        this.first = first;
+        this.second = second;
+    }
+
+    public void print(){
+        if(isArg == 0){
+            System.out.println(" is a value from "+this.first + " to " + this.second);
+        }
+        else{
+            System.out.println(" is an argument from "+this.first + " to " + this.second);
+        }
+    }
+
+}
 class SymbolTable{
 
     HashMap<String, MethodTable> mlist;
@@ -35,18 +63,21 @@ class MethodTable{
     LinkedHashMap<Integer,BlockTable> block_list;
     int maxArgCnt;
     int blockCnt;
+    int allRegCnt;
+
+    String [] allRegs;
     String argCnt;
+    boolean spillFlag;
 
     BlockTable curr_block;
     String curr_label;
-
+    
+    LinkedHashSet<String> allTemps;
+    LinkedHashMap<String,Tuple> liveIntervalMap;
     LinkedHashMap<String,String> reg_map;
-    //LinkedHashMap<String,Pair> live_range;
-
     /**
      * To do- 
-     * After liveness analysis, find the live range for every temp used in the function
-     * Then allocate registers using the linear scan algorithm
+     * 
      */
 
     MethodTable(){
@@ -58,6 +89,12 @@ class MethodTable{
         this.curr_label = null;
         this.lbl_list = new LinkedHashMap<String,BlockTable>();
         this.block_list = new LinkedHashMap<Integer,BlockTable>();
+        this.liveIntervalMap = new LinkedHashMap<String,Tuple>();
+        this.allTemps = new LinkedHashSet<String>();
+        this.spillFlag = false;
+        this.allRegs = new String[]{"s0","s1","s2","s3","s4","s5","s6","s7","t0","t1","t2","t3","t4","t5","t6","t7","t8","t9"};
+        this.allRegCnt = this.allRegs.length;
+        this.reg_map = new LinkedHashMap<String,String>();
     }
 
     MethodTable(String fName,String argCnt){
@@ -68,6 +105,12 @@ class MethodTable{
         this.curr_label = null;
         this.lbl_list = new LinkedHashMap<String,BlockTable>();
         this.block_list = new LinkedHashMap<Integer,BlockTable>();
+        this.liveIntervalMap = new LinkedHashMap<String,Tuple>();
+        this.allTemps = new LinkedHashSet<String>();
+        this.spillFlag = false;
+        this.allRegs = new String[]{"s0","s1","s2","s3","s4","s5","s6","s7","t0","t1","t2","t3","t4","t5","t6","t7","t8","t9"};
+        this.allRegCnt = this.allRegs.length;
+        this.reg_map = new LinkedHashMap<String,String>();
     }
 
     void setBlock(int addr){curr_block = block_list.get(addr);}
@@ -106,7 +149,7 @@ class MethodTable{
     void analyzeLiveness(){
 
         //Uncomment for Debugging
-        System.out.println("Liveness for " + this.fName + "::");
+        //System.out.println("Liveness for " + this.fName + "::");
         int iter=0;
         boolean flag = false;
         do{
@@ -139,24 +182,121 @@ class MethodTable{
             }
             //Uncomment for debugging
             //Debugging Liveness
-            if(iter>=25){flag = false;break;}
-            else{this.debugLiveness(iter);}
+            /* if(iter>=25){flag = false;break;}
+            else{this.debugLiveness(iter);} */
                    
         }while(flag);
+        //System.out.println("Iterations = " + iter);
+        //Update live ranges
+        this.updateLiveRanges();
+        //this.debugLiveRanges();
+    }
+
+    int getEnd(String str){
+        //return last in
+        int ans = 0;
+        for(int j = this.blockCnt - 1; j>=0; --j){
+            if(block_list.get(j).in.contains(str)){ans = j;break;}
+        }
+        return ans;
+    }
+
+    int[] getStart(String str){
+        //return use or def- whichever is earlier
+        int []ans = new int[2];
+        int ansUse = this.blockCnt;
+        int ansDef = this.blockCnt;
+
+        for(int j = 0;j<this.blockCnt;++j){
+            if(block_list.get(j).def.contains(str)){ansDef = j;break;}
+        }
+
+        for(int j = 0;j<this.blockCnt;++j){
+            if(block_list.get(j).use.contains(str)){ansUse = j;break;}
+        }
+
+        if(ansDef < ansUse){
+            ans[0] = 0;
+            ans[1] = ansDef;
+            return ans;}
+        else{
+            ans[0] = 1;
+            ans[1] = ansUse;
+            return ans;
+        }
     }
     
     void updateLiveRanges(){
-        //A live range from first def to last in
-        for(int i=0;i<blockCnt;++i){
-            //For every def of every block
+        
+        Iterator<String> itr = this.allTemps.iterator();
+        
+        while(itr.hasNext()){
+            String str = itr.next();
+            int[] arr = this.getStart(str);
+            int start = arr[1];
+            int end = this.getEnd(str);
+            Tuple active_range = new Tuple(str,start,end);
+            active_range.isArg = arr[0];
+            liveIntervalMap.put(str, active_range);
+        }
+    }
+    
+    void doLinearScan(){
+
+        //Perform linear scan register  allocation
+        ArrayList<Tuple> liveIntervals = new ArrayList<Tuple>();
+        ArrayList<Tuple> activeIntervals = new ArrayList<Tuple>();
+        ArrayList<Integer> activeRegisters = new ArrayList<Integer>();//store index of active registers
+        
+        //maintain free register pool
+        boolean [] freeRegPool = new boolean[18];
+        for(int i=0;i<18;++i)freeRegPool[i] = true;
+
+        //Build liveIntervals
+        Iterator itr = liveIntervalMap.entrySet().iterator();
+        while(itr.hasNext()){
+            Map.Entry pair = (Map.Entry)itr.next();
+            Tuple curr_range = (Tuple)pair.getValue();
+            int pos=-1;
+            //Iterate and search for correct position to insert
+            for(int i = 0;i < liveIntervals.size();++i){
+                if(liveIntervals.get(i).first > curr_range.first){
+                    pos = i;
+                    break;
+                }
+            }
+
+            if(pos==-1){
+                //add at the end
+                liveIntervals.add(curr_range);
+            }
+            else{
+                //add in between
+                liveIntervals.add(pos,curr_range);
+            }
         }
 
-    }
+        for(int i = 0;i< liveIntervals.size();++i){
+            //expire all old intervals
+            for(int j = 0;j < activeIntervals.size();j++){
+                if(activeIntervals.get(j).second >= liveIntervals.get(i).first){
+                    break;
+                }
+                else{
+                    //interval no longer active
+                    freeRegPool[activeRegisters.get(j).intValue()]
 
-    void doLinearScan(){
-        //Update live ranges
-        this.updateLiveRanges();
-        //Perform linear scan
+                }
+            }
+
+            //check if we need to spill current register
+            if(active.size() == this.allRegCnt){
+                //spill
+
+            }else{
+                //assign a free register
+            }
+        }
     }
 
     void debugUseDef(){
@@ -193,6 +333,10 @@ class MethodTable{
         }
     }
 
+    void debugLiveRanges(){
+        System.out.println("#################"+ this.fName+"####################");
+        liveIntervalMap.forEach((k,v)->{System.out.print("For " + k + "->");v.print();});
+    }
 }
 
 class BlockTable{
@@ -756,7 +900,13 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         
         tmp = (String)n.f0.accept(this, argu);
         val = (String)n.f1.accept(this, argu);
+        //This temp was used somwehere
         _ret = (R)(tmp+val);
+        if(argu.toString().equals("1")){
+            if(!T.curr_method.allTemps.contains(tmp+val)){
+                T.curr_method.allTemps.add(tmp+val);
+            } 
+        }
         return _ret;
     }
 
