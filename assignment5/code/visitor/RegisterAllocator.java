@@ -75,6 +75,8 @@ class MethodTable{
     LinkedHashSet<String> allTemps;
     LinkedHashMap<String,Tuple> liveIntervalMap;
     LinkedHashMap<String,String> reg_map;
+    LinkedHashMap<String,String> spill_map;
+    int spill_cnt;
     /**
      * To do- 
      * 
@@ -95,6 +97,8 @@ class MethodTable{
         this.allRegs = new String[]{"s0","s1","s2","s3","s4","s5","s6","s7","t0","t1","t2","t3","t4","t5","t6","t7","t8","t9"};
         this.allRegCnt = this.allRegs.length;
         this.reg_map = new LinkedHashMap<String,String>();
+        this.spill_map = new LinkedHashMap<>();
+        this.spill_cnt = 0;
     }
 
     MethodTable(String fName,String argCnt){
@@ -111,6 +115,8 @@ class MethodTable{
         this.allRegs = new String[]{"s0","s1","s2","s3","s4","s5","s6","s7","t0","t1","t2","t3","t4","t5","t6","t7","t8","t9"};
         this.allRegCnt = this.allRegs.length;
         this.reg_map = new LinkedHashMap<String,String>();
+        this.spill_map = new LinkedHashMap<String,String>();
+        this.spill_cnt = 0;
     }
 
     void setBlock(int addr){curr_block = block_list.get(addr);}
@@ -276,27 +282,86 @@ class MethodTable{
             }
         }
 
+        //LINEAR SCAN
         for(int i = 0;i< liveIntervals.size();++i){
             //expire all old intervals
-            for(int j = 0;j < activeIntervals.size();j++){
+            for(int j = 0;j < activeIntervals.size();){
                 if(activeIntervals.get(j).second >= liveIntervals.get(i).first){
                     break;
                 }
                 else{
-                    //interval no longer active
-                    freeRegPool[activeRegisters.get(j).intValue()]
-
+                    freeRegPool[activeRegisters.get(j).intValue()] = true;
+                    activeIntervals.remove(j);
+                    activeRegisters.remove(j);
                 }
             }
 
-            //check if we need to spill current register
-            if(active.size() == this.allRegCnt){
-                //spill
+            //check if we need to spill
+            if(activeRegisters.size() == this.allRegCnt){
+                this.spillFlag = true;
+                //spill the current register
+                Tuple spill = activeIntervals.get(activeIntervals.size()-1);
+                if(spill.second > liveIntervals.get(i).second){
+                    int freshReg = activeRegisters.get(activeRegisters.size()-1).intValue();
+                    activeRegisters.remove(activeRegisters.size()-1);
+                    activeIntervals.remove(activeIntervals.size()-1);
+                    //add spill to stack space
+                    //remove entry from reg_map
+                    reg_map.remove(spill.var);
+                    spill_map.put(spill.var, Integer.toString(spill_cnt++));
+                    //add to active
+                    int pos = -1;
+                    for(int j = 0;j < activeIntervals.size();++j){
+                        if(activeIntervals.get(j).second >= liveIntervals.get(i).second){
+                            pos = j;
+                            break;
+                        }
+                    }
+                    //add at position pos
+                    if(pos == -1){
+                        activeIntervals.add(liveIntervals.get(i));activeRegisters.add(Integer.valueOf(freshReg));
+                    }
+                    else{
+                        activeIntervals.add(pos, liveIntervals.get(i));activeRegisters.add(pos,Integer.valueOf(freshReg));
+                    }
 
-            }else{
+                }
+                else{
+                    //add liveIntervals[i] to new stack location
+                    spill_map.put(liveIntervals.get(i).var,Integer.toString(spill_cnt++));
+                }
+
+            }
+            else{
                 //assign a free register
+                int freshReg=0;
+                for(;freshReg<18;++freshReg){
+                    if(freeRegPool[freshReg] == true){
+                        freeRegPool[freshReg] = false;
+                        break;
+                    }
+                }
+                //assign freeRegister to interval i 
+                reg_map.put(liveIntervals.get(i).var,this.allRegs[freshReg]);
+                //add to active
+                int pos = -1;
+                for(int j = 0;j < activeIntervals.size();++j){
+                    if(activeIntervals.get(j).second >= liveIntervals.get(i).second){
+                        pos = j;
+                        break;
+                    }
+                }
+                //add at position pos
+                if(pos == -1){
+                    activeIntervals.add(liveIntervals.get(i));activeRegisters.add(Integer.valueOf(freshReg));
+                }
+                else{
+                    activeIntervals.add(pos, liveIntervals.get(i));activeRegisters.add(pos,Integer.valueOf(freshReg));
+                }
             }
         }
+
+        //debugLinearScan();
     }
 
     void debugUseDef(){
@@ -336,6 +401,15 @@ class MethodTable{
     void debugLiveRanges(){
         System.out.println("#################"+ this.fName+"####################");
         liveIntervalMap.forEach((k,v)->{System.out.print("For " + k + "->");v.print();});
+    }
+
+    void debugLinearScan(){
+        //Print out reg_map and spill_map for program
+        System.out.println("In function :: " + this.fName);
+        System.out.println("Register mapping is :: ");
+        System.out.println(reg_map);
+        System.out.println("Spill mapping is :: ");
+        System.out.println(spill_map);
     }
 }
 
