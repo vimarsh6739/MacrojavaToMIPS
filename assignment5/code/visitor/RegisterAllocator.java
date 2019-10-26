@@ -33,20 +33,31 @@ class MethodTable{
     String fName;
     LinkedHashMap<String,BlockTable> lbl_list;
     LinkedHashMap<Integer,BlockTable> block_list;
+    int maxArgCnt;
     int blockCnt;
     String argCnt;
 
     BlockTable curr_block;
     String curr_label;
-    
+
+    LinkedHashMap<String,String> reg_map;
+    //LinkedHashMap<String,Pair> live_range;
+
+    /**
+     * To do- 
+     * After liveness analysis, find the live range for every temp used in the function
+     * Then allocate registers using the linear scan algorithm
+     */
+
     MethodTable(){
-        fName = null;
-        argCnt = null;
-        curr_block = null;
-        blockCnt = 0;
-        curr_label = null;
-        lbl_list = new LinkedHashMap<String,BlockTable>();
-        block_list = new LinkedHashMap<Integer,BlockTable>();
+        this.fName = null;
+        this.argCnt = null;
+        this.curr_block = null;
+        this.maxArgCnt = 0;
+        this.blockCnt = 0;
+        this.curr_label = null;
+        this.lbl_list = new LinkedHashMap<String,BlockTable>();
+        this.block_list = new LinkedHashMap<Integer,BlockTable>();
     }
 
     MethodTable(String fName,String argCnt){
@@ -55,8 +66,8 @@ class MethodTable{
         this.curr_block = null;
         this.blockCnt = 0;
         this.curr_label = null;
-        lbl_list = new LinkedHashMap<String,BlockTable>();
-        block_list = new LinkedHashMap<Integer,BlockTable>();
+        this.lbl_list = new LinkedHashMap<String,BlockTable>();
+        this.block_list = new LinkedHashMap<Integer,BlockTable>();
     }
 
     void setBlock(int addr){curr_block = block_list.get(addr);}
@@ -95,7 +106,7 @@ class MethodTable{
     void analyzeLiveness(){
 
         //Uncomment for Debugging
-        //System.out.println("Liveness for " + this.fName + "::");
+        System.out.println("Liveness for " + this.fName + "::");
         int iter=0;
         boolean flag = false;
         do{
@@ -127,15 +138,25 @@ class MethodTable{
                 flag = (flag) || !(node.checkSet());
             }
             //Uncomment for debugging
-            /* //Debugging Liveness
+            //Debugging Liveness
             if(iter>=25){flag = false;break;}
             else{this.debugLiveness(iter);}
-            */        
+                   
         }while(flag);
     }
     
+    void updateLiveRanges(){
+        //A live range from first def to last in
+        for(int i=0;i<blockCnt;++i){
+            //For every def of every block
+        }
+
+    }
+
     void doLinearScan(){
-        //Perform register allocation
+        //Update live ranges
+        this.updateLiveRanges();
+        //Perform linear scan
     }
 
     void debugUseDef(){
@@ -318,6 +339,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         n.f4.accept(this,(A)"2");
 
         //T.debugUseDef();
+        System.out.println("Done !");
         return _ret;
     }
 
@@ -385,7 +407,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             break;
 
             case "2":
-            n.f0.accept(this, argu);
+            fName = (String)n.f0.accept(this, argu);
             n.f1.accept(this, argu);
             n.f2.accept(this, argu);
             n.f3.accept(this, argu);
@@ -652,11 +674,10 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         n.f2.accept(this, argu);
 
         if(n.f3.present()){
+            if(argu.toString().equals("1")){T.curr_method.maxArgCnt = Math.max(T.curr_method.maxArgCnt,n.f3.size());}
             for(int i=0;i<n.f3.size();++i){
                 tmp = (String)((Node)n.f3.elementAt(i)).accept(this,argu);
-                if(argu.toString().equals("1")){
-                    T.curr_method.curr_block.addUse(tmp);
-                }
+                if(argu.toString().equals("1")){T.curr_method.curr_block.addUse(tmp);}
             }
         }
 
