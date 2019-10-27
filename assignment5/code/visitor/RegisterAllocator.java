@@ -81,6 +81,12 @@ class MethodTable{
 
     //Number of stack slots needed
     int stackSlotCnt;
+    //Start of s-registers in Stack
+    int regBaseS;
+    //Start of t-registers in Stack
+    int regBaseT;
+    //Start of spilled temps in Stack
+    int spillBase;
 
     MethodTable(){
 
@@ -101,6 +107,9 @@ class MethodTable{
         this.spillMap = new LinkedHashMap<>();
         this.spillCnt = 0;
         this.stackSlotCnt = 0;
+        this.regBaseS = 0;
+        this.regBaseT = 0;
+        this.spillBase = 0;
     }
 
     MethodTable(String fName,String argCnt){
@@ -121,6 +130,9 @@ class MethodTable{
         this.spillMap = new LinkedHashMap<String,String>();
         this.spillCnt = 0;
         this.stackSlotCnt = 0;
+        this.regBaseS = 0;
+        this.regBaseT = 0;
+        this.spillBase = 0;
     }
 
     void setBlock(int addr){curr_block = blockMap.get(addr);}
@@ -158,13 +170,14 @@ class MethodTable{
     }
 
     void analyzeLiveness(){
-        //Add a special block for the method arguments as def in block 0
+        //Add a special block for the method arguments as def in block 0- only allocate upto 4 regs
+        //rest are already spilt
         BlockTable special = new BlockTable();
-        for(int i = 0;i < Integer.parseInt(this.argCnt);++i){
-            special.def.add("TEMP" + i);
-            //1 is the only successor to 0
-            special.succ.add(blockMap.get(1));
+        for(int i = 0;i < Math.min(Integer.parseInt(this.argCnt),4);++i){
+            special.def.add("TEMP" + i);            
         }
+        //Block 1 is successor of block 0
+        special.succ.add(blockMap.get(1));
         blockMap.put(0,special);
         
         //Analyze liveness for all blocks starting from 0
@@ -390,25 +403,38 @@ class MethodTable{
 
     void initializeStackSlots(){
 
-        //space for function arguments
+        //A procedure's stack contains its arguments, s & t registers and spilled variables 
+        
+        //Arguments
         if(Integer.parseInt(this.argCnt) > 4){
             this.stackSlotCnt += Integer.parseInt(this.argCnt) - 4;
         }
-        //space for call arguments
-        if(this.maxCallArgCnt > 4){
-            this.stackSlotCnt += this.maxCallArgCnt - 4;
-        }
-        //space for spilled temps
-        this.stackSlotCnt+=this.spillCnt;
-        //space for calls
-        if(this.maxCallArgCnt > 0){
-            //save all t registers
-            this.stackSlotCnt +=10;
-        }
+        //s-registers start here 
+        this.regBaseS = this.stackSlotCnt;
+        
         if(!this.fName.equals("MAIN")){
-            //no need to save s registers in MAIN
+            //no need to save s registers in MAIN function(optimization)
             this.stackSlotCnt+=8;
         }
+
+        //t-registers start here
+        this.regBaseT = this.stackSlotCnt;
+        //Only save the t-registers if there is a function call(optimization)
+        if(this.maxCallArgCnt > 0){this.stackSlotCnt +=10;}
+
+        //spilled variables start here
+        this.spillBase = this.stackSlotCnt;
+        
+        //Modify all entries in spillMap to add an offset of spill base -lambda power!
+        spillMap.replaceAll((k, v) -> Integer.toString(Integer.parseInt(v) + this.spillBase));
+        
+        //Add arguments of the function > 4 to the spill map also
+        for(int i = 4; i < Integer.parseInt(this.argCnt); ++i){
+            spillMap.put("TEMP"+Integer.toString(i), Integer.toString(i-4));
+        }
+
+        this.stackSlotCnt+=this.spillCnt;     
+
     }
 
     void debugUseDef(){
@@ -649,7 +675,6 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
 
             }
         }
-
         return _ret;
     }
 
@@ -666,7 +691,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         String argCnt = "";
 
         switch(argu.toString()){
-            
+
             case "1": 
             fName = (String)n.f0.accept(this, argu);
             n.f1.accept(this, argu);
@@ -685,11 +710,11 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             n.f1.accept(this, argu);
             argCnt = (String)n.f2.accept(this, argu);
             n.f3.accept(this, argu);
-
             T.curr_method = T.mlist.get(fName);
+
             System.out.println(fName + " [" + argCnt + "] [" + T.curr_method.stackSlotCnt + "] ["
                               + T.curr_method.maxCallArgCnt + "] " );
-
+            
             n.f4.accept(this, argu);
 
             System.out.println("//SPILL STATUS = " + T.curr_method.spillFlag);
@@ -770,7 +795,9 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                     //register mapped value
                     System.out.println("\tCJUMP " + T.curr_method.regMap.get(tmp) + " " + label + " " );
                 }else{
-                    //spilled value-to do
+                    //tmp is a spilled value
+                    System.out.println("\tALOAD v1 SPILLEDARG " + T.curr_method.spillMap.get(tmp));
+                    System.out.println("\tCJUMP v1 " + label);
                 }
             break;
         }
@@ -835,23 +862,30 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             
             if(T.curr_method.regMap.containsKey(tmp1)){
                 if(T.curr_method.regMap.containsKey(tmp2)){
+                    //Both mapped
                     System.out.println("\tHSTORE " + T.curr_method.regMap.get(tmp1) + " " + offset + " " 
                     + T.curr_method.regMap.get(tmp2) + " ");
                 }
                 else{
-
+                    //tmp1 mapped, tmp2 spilled
+                    System.out.println("\tALOAD v1 SPILLARG " + T.curr_method.spillMap.get(tmp2));
+                    System.out.println("\tHSTORE " + T.curr_method.regMap.get(tmp1) + " " + offset + " v1 ");
                 }
             }else{
                 if(T.curr_method.regMap.containsKey(tmp2)){
-
+                    //tmp 2 mapped, tmp1 spilled
+                    System.out.println("\tALOAD v1 SPILLARG " + T.curr_method.spillMap.get(tmp1));
+                    System.out.println("\tHSTORE v1 " + " " + offset + " " + T.curr_method.regMap.get(tmp2) + " ");
                 }
                 else{
-
+                    //Both are spilled
+                    System.out.println("\tALOAD v0 SPILLARG " + T.curr_method.spillMap.get(tmp1));
+                    System.out.println("\tALOAD v1 SPILLARG " + T.curr_method.spillMap.get(tmp2));
+                    System.out.println("\tHSTORE v0 " + offset + " v1 ");
                 }
             }
 
         }
-
         return _ret;
     }
 
@@ -885,18 +919,25 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         if(argu.toString().equals("2")){
             if(T.curr_method.regMap.containsKey(tmp1)){
                 if(T.curr_method.regMap.containsKey(tmp2)){
-                    System.out.println("\tHSTORE " + T.curr_method.regMap.get(tmp1) + " " + offset + " " 
-                    + T.curr_method.regMap.get(tmp2) + " ");
+                    System.out.println("\tHLOAD " + T.curr_method.regMap.get(tmp1) + " " 
+                    + T.curr_method.regMap.get(tmp2) + " "+ offset +" ");
                 }
                 else{
-
+                    //tmp2 spilled
+                    System.out.println("\tALOAD v1 SPILLARG " + T.curr_method.spillMap.get(tmp2) + " ");
+                    System.out.println("\tHLOAD " + T.curr_method.regMap.get(tmp1)  + " v1 " + offset+ " ");
                 }
             }else{
                 if(T.curr_method.regMap.containsKey(tmp2)){
-
+                    //tmp1 spilled
+                    System.out.println("\tHLOAD v1 " + T.curr_method.regMap.get(tmp2) + " "+ offset + " " );
+                    System.out.println("\tASTORE SPILLEDARG " + T.curr_method.spillMap.get(tmp1) + " v1 ");
                 }
                 else{
-
+                    //both spilled
+                    System.out.println("\tALOAD v0 SPILLARG " + T.curr_method.spillMap.get(tmp2) + " ");
+                    System.out.println("\tHLOAD v1 " + " v0 " + offset+" ");
+                    System.out.println("\tASTORE SPILLEDARG " + T.curr_method.spillMap.get(tmp1) + " v1 ");
                 }
             }
         }
@@ -933,7 +974,9 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                 System.out.print("\tMOVE " + T.curr_method.regMap.get(tmp1) + " " + expr + "\n");
             }
             else{
-                //to -do spilling
+                //expr might contain an instruction or a ret value or a ret register-> if its spilledarg then always v0
+                System.out.print("\tMOVE v1 "+ expr + "\n");
+                System.out.println("\tASTORE SPILLEDARG " + T.curr_method.spillMap.get(tmp1) + " v1 ");
             }
         }
 
@@ -960,7 +1003,13 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         }
 
         if(argu.toString().equals("2")){
-            System.out.println("\t" + inst0 + " " + inst1);
+            if(T.curr_method.regMap.containsKey(inst1)){
+                System.out.println("\t" + inst0 + " " + T.curr_method.regMap.get(inst1) + " ");
+            }
+            else{
+                System.out.println("\tALOAD v1 SPILLEDARG " + T.curr_method.spillMap.get(inst1)+ " ");
+                System.out.println("\t" + inst0 + " v1 ");
+            }
         }
 
         return _ret;
@@ -984,7 +1033,10 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                     _ret = (R)T.curr_method.regMap.get(str);
                 }
                 else{
-                    //register is spilled
+                    //register is spilled->return v0
+                    if(argu.toString().equals("2"))
+                        System.out.println("\tALOAD v0 SPILLEDARG " + T.curr_method.spillMap.get(str));
+                    _ret = (R)("v0");
                 }
             }
         }
@@ -1019,7 +1071,14 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
 
             //Save s-registers
             for(int i=0;i<=7;++i){
-                System.out.println("\tASTORE SPILLEDARG "+i+" s" + i);
+                System.out.println("\tASTORE SPILLEDARG "+(T.curr_method.regBaseS + i) +" s" + i);
+            }
+
+            //Assign registers to arguments- other arguments are already spilled
+            for(int i = 0; i < Math.min(4,Integer.parseInt(T.curr_method.argCnt));++i){
+                if(T.curr_method.regMap.containsKey("TEMP" + Integer.toString(i))){
+                    System.out.println("MOVE " + T.curr_method.regMap.get("TEMP" + Integer.toString(i)) + " a" + i);
+                }
             }
 
             n.f1.accept(this, argu);
@@ -1039,12 +1098,12 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             
             //Restore s- registers
             for(int i = 0;i <= 7 ; ++i){
-                System.out.println("\tALOAD s" + i +" SPILLEDARG " + i);
+                System.out.println("\tALOAD s" + (T.curr_method.regBaseS + i) +" SPILLEDARG " + i);
             }
-
             System.out.println("END");
             break;
         }
+
         return _ret;
     }
 
@@ -1061,8 +1120,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         if(argu.toString().equals("2")){
             //Save all t regs
             for(int i = 0;i<=9;++i){
-                //tbcc
-                System.out.println("\tASTORE SPILLEDARG " + (i+8) + " t" + i);
+                System.out.println("\tASTORE SPILLEDARG " + (T.curr_method.regBaseT + i) + " t" + i);
             }
         }
         
@@ -1078,6 +1136,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             if(argu.toString().equals("1")){
                 T.curr_method.maxCallArgCnt = Math.max(T.curr_method.maxCallArgCnt,n.f3.size());
             }
+            
             for(int i=0;i<n.f3.size();++i){
                 tmp = (String)((Node)n.f3.elementAt(i)).accept(this,argu);
                 if(argu.toString().equals("1")){
@@ -1089,16 +1148,20 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                             System.out.println("\tMOVE a" + i + " " + T.curr_method.regMap.get(tmp) + " ");
                         }
                         else{
-                            //temp is spilt
+                            //tmp is spilt
+                            System.out.println("\tALOAD v1 SPILLEDARG " + T.curr_method.spillMap.get(tmp) + " ");
+                            System.out.println("\tMOVE a"+i +" v1 " );
                         }
                     }
                     else{
-                        //a is spilt
+                        //a is a passarg
                         if(T.curr_method.regMap.containsKey(tmp)){
-                            System.out.println("\tMOVE a" + i + " " + T.curr_method.regMap.get(tmp) + " ");
+                            System.out.println("\tPASSARG "+ (i-3) + " "+ T.curr_method.regMap.get(tmp) + " ");
                         }
                         else{
                             //temp is spilt
+                            System.out.println("\tALOAD v1 SPILLEDARG "+ T.curr_method.spillMap.get(tmp) + " ");
+                            System.out.println("\tPASSARG "+ (i-3) + " v1 ");
                         }
                     }
                 }
@@ -1107,16 +1170,17 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
 
         if(argu.toString().equals("2")){
             if(T.curr_method.regMap.containsKey(inst1)){
-                System.out.println("\t"+inst0 +" "  + T.curr_method.regMap.get(inst1) + " ");
+                System.out.println("\tCALL "  + T.curr_method.regMap.get(inst1) + " ");
             }
             else{
                 //spilt calling function temp
+                System.out.println("\tALOAD v1 SPILLEDARG "+T.curr_method.spillMap.get(inst1) + " ");
+                System.out.println("\tCALL v1 ");
             }
 
             //Restore all t regs
             for(int i = 0;i<=9;++i){
-                //tbc
-                System.out.println("\tALOAD t" + i + " SPILLEDARG " + (i+8) + " ");
+                System.out.println("\tALOAD t" + i + " SPILLEDARG " + (i+ T.curr_method.regBaseT) + " ");
             }
         }
 
@@ -1141,9 +1205,11 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                 //Temporary
                 if(T.curr_method.regMap.containsKey(inst1)){
                     //has register value
-                    _ret = (R)(inst0 + " "  + T.curr_method.regMap.get(inst1));
+                    _ret = (R)("HALLOCATE "  + T.curr_method.regMap.get(inst1));
                 }else{
                     //has been spilled
+                    System.out.println("\tALOAD v0 SPILLEDARG " + T.curr_method.spillMap.get(inst1));
+                    _ret = (R)("HALLOCATE v0");
                 }
             }else{
                 //Integer literal or label
@@ -1172,7 +1238,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
 
         inst2 = (String)n.f2.accept(this, argu);
         
-        //return instruction itself
+        //Returns instruction itself
         if(argu.toString().equals("2")){
             if(T.curr_method.regMap.containsKey(inst1)){
                 //mapped temp1
@@ -1183,8 +1249,9 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                         _ret = (R)(inst0 + " " + T.curr_method.regMap.get(inst1) + " " + T.curr_method.regMap.get(inst2) + " ");
                     }
                     else{
-                        //temp 2 is spilt-tbd
-
+                        //temp 2 is spilt
+                        System.out.println("\tALOAD v1 SPILLEDARG " + T.curr_method.spillMap.get(inst2));
+                        _ret = (R)(inst0 + " " +T.curr_method.regMap.get(inst1) + " v1 ");
                     }
                 }
                 else{
@@ -1197,13 +1264,21 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                     //Temporary
                     if(T.curr_method.regMap.containsKey(inst2)){
                         //mapped temp2
+                        System.out.println("\tALOAD v1 SPILLEDARG "+  T.curr_method.spillMap.get(inst1));
+                        _ret = (R)(inst0 + " v1 " +T.curr_method.regMap.get(inst2) + " ");
                     }
+
                     else{
-                        //both are spilt
+                        //both are spilt :(
+                        System.out.println("\tALOAD v0 SPILLEDARG " + T.curr_method.spillMap.get(inst1));
+                        System.out.println("\tALOAD v1 SPILLEDARG " + T.curr_method.spillMap.get(inst2));
+                        _ret = (R)(inst0 + " v0 v1 ");
                     }
                 }
                 else{
                     //Integer literal
+                    System.out.println("\tALOAD v1 SPILLEDARG "+  T.curr_method.spillMap.get(inst1));
+                    _ret = (R)(inst0 + " v1 " +inst2 + " ");
 
                 }
             }
