@@ -337,7 +337,9 @@ class MethodTable{
                     activeIntervals.remove(activeIntervals.size()-1);
                     //Add spill to stack space && remove entry from reg_map
                     regMap.remove(spill.var);
+                    regMap.put(liveIntervals.get(i).var, this.allRegs[freshReg]);
                     spillMap.put(spill.var, Integer.toString(spillCnt++));
+
                     //Add i to active
                     //Find position in sorted order
                     int pos = -1;
@@ -397,7 +399,7 @@ class MethodTable{
             }
         }
 
-        //this.debugLinearScan();
+        System.out.println(freeRegPool[0]);
         this.initializeStackSlots();
     }
 
@@ -434,7 +436,7 @@ class MethodTable{
         }
 
         this.stackSlotCnt+=this.spillCnt;     
-
+        this.debugLinearScan();
     }
 
     void debugUseDef(){
@@ -617,7 +619,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         
         //Code Generation
 
-        n.f0.accept(this,(A)"2");
+        /* n.f0.accept(this,(A)"2");
 
         T.curr_method = T.mlist.get("MAIN");
         System.out.println("MAIN [" + T.curr_method.argCnt + "] [" + T.curr_method.stackSlotCnt + "] [" 
@@ -631,7 +633,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         T.curr_method = null;
 
         n.f3.accept(this,(A)"2");
-        n.f4.accept(this,(A)"2");
+        n.f4.accept(this,(A)"2"); */
 
         //T.debugUseDef();
         return _ret;
@@ -1027,7 +1029,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         if(n.f0.which == 3){
             //If simpleExp is a temp, then convert it to a register
             String str = (String)_ret;
-            if(str.charAt(0) == 'T'){
+            if(str.startsWith("TEMP")){
                 //convert it to register
                 if(T.curr_method.regMap.containsKey(str)){
                     _ret = (R)T.curr_method.regMap.get(str);
@@ -1085,7 +1087,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             n.f2.accept(this, argu);
 
             rval = (String)n.f3.accept(this, argu);
-            if(rval.charAt(0) == 'T'){
+            if(rval.startsWith("TEMP")){
                 //to be changed to check spill
                 System.out.println("\tMOVE v0 " + T.curr_method.regMap.get(rval));
             }
@@ -1169,15 +1171,21 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         }
 
         if(argu.toString().equals("2")){
-            if(T.curr_method.regMap.containsKey(inst1)){
-                System.out.println("\tCALL "  + T.curr_method.regMap.get(inst1) + " ");
+
+            if(inst1.startsWith("TEMP")){
+                if(T.curr_method.regMap.containsKey(inst1)){
+                    System.out.println("\tCALL "  + T.curr_method.regMap.get(inst1) + " ");
+                }
+                else{
+                    //spilt calling function temp
+                    System.out.println("\tALOAD v1 SPILLEDARG "+T.curr_method.spillMap.get(inst1) + " ");
+                    System.out.println("\tCALL v1 ");
+                }
             }
             else{
-                //spilt calling function temp
-                System.out.println("\tALOAD v1 SPILLEDARG "+T.curr_method.spillMap.get(inst1) + " ");
-                System.out.println("\tCALL v1 ");
+                //label
+                System.out.println("\tCALL "+inst1);
             }
-
             //Restore all t regs
             for(int i = 0;i<=9;++i){
                 System.out.println("\tALOAD t" + i + " SPILLEDARG " + (i+ T.curr_method.regBaseT) + " ");
@@ -1201,7 +1209,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         inst1 = (String)n.f1.accept(this, argu);
         
         if(argu.toString().equals("2")){
-            if(inst1.charAt(0) == 'T'){
+            if(inst1.startsWith("TEMP")){
                 //Temporary
                 if(T.curr_method.regMap.containsKey(inst1)){
                     //has register value
@@ -1242,7 +1250,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         if(argu.toString().equals("2")){
             if(T.curr_method.regMap.containsKey(inst1)){
                 //mapped temp1
-                if(inst2.charAt(0) == 'T'){
+                if(inst2.startsWith("TEMP")){
                     //Temporary
                     if(T.curr_method.regMap.containsKey(inst2)){
                         //mapped temp2
@@ -1260,7 +1268,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                 }
             }else{
                 //spilt temp1
-                if(inst2.charAt(0) == 'T'){
+                if(inst2.startsWith("TEMP")){
                     //Temporary
                     if(T.curr_method.regMap.containsKey(inst2)){
                         //mapped temp2
