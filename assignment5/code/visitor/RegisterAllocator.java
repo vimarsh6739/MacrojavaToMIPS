@@ -35,6 +35,7 @@ class Tuple {
     }
 
 }
+
 class SymbolTable{
 
     HashMap<String, MethodTable> mlist;
@@ -59,110 +60,124 @@ class SymbolTable{
 class MethodTable{
 
     String fName;
-    LinkedHashMap<String,BlockTable> lbl_list;
-    LinkedHashMap<Integer,BlockTable> block_list;
-    int maxArgCnt;
-    int blockCnt;
-    int allRegCnt;
-
-    String [] allRegs;
     String argCnt;
-    boolean spillFlag;
+    int maxCallArgCnt;
+    int allRegCnt;
+    String [] allRegs;
 
+    LinkedHashMap<String,BlockTable> labelMap;
+    LinkedHashMap<Integer,BlockTable> blockMap;
     BlockTable curr_block;
     String curr_label;
-    
+    int blockCnt;
+
     LinkedHashSet<String> allTemps;
     LinkedHashMap<String,Tuple> liveIntervalMap;
-    LinkedHashMap<String,String> reg_map;
-    LinkedHashMap<String,String> spill_map;
-    int spill_cnt;
-    /**
-     * To do- 
-     * 
-     */
+
+    LinkedHashMap<String,String> regMap;
+    LinkedHashMap<String,String> spillMap;
+    int spillCnt;
+    boolean spillFlag;
+
+    //Number of stack slots needed
+    int stackSlotCnt;
 
     MethodTable(){
+
         this.fName = null;
         this.argCnt = null;
         this.curr_block = null;
-        this.maxArgCnt = 0;
-        this.blockCnt = 0;
+        this.maxCallArgCnt = 0;
+        this.blockCnt = 1;
         this.curr_label = null;
-        this.lbl_list = new LinkedHashMap<String,BlockTable>();
-        this.block_list = new LinkedHashMap<Integer,BlockTable>();
+        this.labelMap = new LinkedHashMap<String,BlockTable>();
+        this.blockMap = new LinkedHashMap<Integer,BlockTable>();
         this.liveIntervalMap = new LinkedHashMap<String,Tuple>();
         this.allTemps = new LinkedHashSet<String>();
         this.spillFlag = false;
         this.allRegs = new String[]{"s0","s1","s2","s3","s4","s5","s6","s7","t0","t1","t2","t3","t4","t5","t6","t7","t8","t9"};
         this.allRegCnt = this.allRegs.length;
-        this.reg_map = new LinkedHashMap<String,String>();
-        this.spill_map = new LinkedHashMap<>();
-        this.spill_cnt = 0;
+        this.regMap = new LinkedHashMap<String,String>();
+        this.spillMap = new LinkedHashMap<>();
+        this.spillCnt = 0;
+        this.stackSlotCnt = 0;
     }
 
     MethodTable(String fName,String argCnt){
+
         this.fName = fName;
         this.argCnt = argCnt;
         this.curr_block = null;
-        this.blockCnt = 0;
+        this.blockCnt = 1;
         this.curr_label = null;
-        this.lbl_list = new LinkedHashMap<String,BlockTable>();
-        this.block_list = new LinkedHashMap<Integer,BlockTable>();
+        this.labelMap = new LinkedHashMap<String,BlockTable>();
+        this.blockMap = new LinkedHashMap<Integer,BlockTable>();
         this.liveIntervalMap = new LinkedHashMap<String,Tuple>();
         this.allTemps = new LinkedHashSet<String>();
         this.spillFlag = false;
         this.allRegs = new String[]{"s0","s1","s2","s3","s4","s5","s6","s7","t0","t1","t2","t3","t4","t5","t6","t7","t8","t9"};
         this.allRegCnt = this.allRegs.length;
-        this.reg_map = new LinkedHashMap<String,String>();
-        this.spill_map = new LinkedHashMap<String,String>();
-        this.spill_cnt = 0;
+        this.regMap = new LinkedHashMap<String,String>();
+        this.spillMap = new LinkedHashMap<String,String>();
+        this.spillCnt = 0;
+        this.stackSlotCnt = 0;
     }
 
-    void setBlock(int addr){curr_block = block_list.get(addr);}
+    void setBlock(int addr){curr_block = blockMap.get(addr);}
+    
     void resetBlock(){curr_block = null;}
 
     //returns the generated index-also updates successor of previous block
     int addBlock(){
         BlockTable node;
         if(this.curr_label != null){
-            node = lbl_list.get(curr_label);
+            node = labelMap.get(curr_label);
         }
         else {
             node = new BlockTable();
         }
-        if(block_list.containsKey(blockCnt-1)){
+        if(blockMap.containsKey(blockCnt-1)){
             //reversi!
-            BlockTable parent = block_list.get(blockCnt-1);
+            BlockTable parent = blockMap.get(blockCnt-1);
             parent.addSucc(node);
         }
-        block_list.put(blockCnt,node);
+        blockMap.put(blockCnt,node);
 
         return blockCnt++;
     }
 
     //add entry to label list or set the value of curr_label if already present
     void addLabel(String label){
-        if(lbl_list.containsKey(label)){
+        if(labelMap.containsKey(label)){
             this.curr_label = label;
         }
         else{
             BlockTable node = new BlockTable(label);
-            lbl_list.put(label,node);
+            labelMap.put(label,node);
         }
     }
 
     void analyzeLiveness(){
+        //Add a special block for the method arguments as def in block 0
+        BlockTable special = new BlockTable();
+        for(int i = 0;i < Integer.parseInt(this.argCnt);++i){
+            special.def.add("TEMP" + i);
+            //1 is the only successor to 0
+            special.succ.add(blockMap.get(1));
+        }
+        blockMap.put(0,special);
+        
+        //Analyze liveness for all blocks starting from 0
 
-        //Uncomment for Debugging
         //System.out.println("Liveness for " + this.fName + "::");
+
         int iter=0;
         boolean flag = false;
         do{
             iter++;          
             flag = false;
             //Iterate and update in and out for every node 
-            Iterator itr = block_list.entrySet().iterator();
+            Iterator itr = blockMap.entrySet().iterator();
             while(itr.hasNext()){
                 Map.Entry pair= (Map.Entry)itr.next();
                 Integer key = (Integer)pair.getKey();
@@ -177,7 +192,7 @@ class MethodTable{
             }
 
             //Check exit condition
-            itr = block_list.entrySet().iterator();
+            itr = blockMap.entrySet().iterator();
             while(itr.hasNext()){
 
                 Map.Entry pair= (Map.Entry)itr.next();
@@ -186,10 +201,9 @@ class MethodTable{
 
                 flag = (flag) || !(node.checkSet());
             }
-            //Uncomment for debugging
+
             //Debugging Liveness
-            /* if(iter>=25){flag = false;break;}
-            else{this.debugLiveness(iter);} */
+            //this.debugLiveness(iter);
                    
         }while(flag);
         //System.out.println("Iterations = " + iter);
@@ -202,26 +216,27 @@ class MethodTable{
         //return last in
         int ans = 0;
         for(int j = this.blockCnt - 1; j>=0; --j){
-            if(block_list.get(j).in.contains(str)){ans = j;break;}
+            if(blockMap.get(j).in.contains(str)){ans = j;break;}
         }
         return ans;
     }
 
-    int[] getStart(String str){
-        //return use or def- whichever is earlier
-        int []ans = new int[2];
-        int ansUse = this.blockCnt;
+    int getStart(String str){
+        //return first def as start
+
+        //int []ans = new int[2];
+        //int ansUse = this.blockCnt;
         int ansDef = this.blockCnt;
 
         for(int j = 0;j<this.blockCnt;++j){
-            if(block_list.get(j).def.contains(str)){ansDef = j;break;}
+            if(blockMap.get(j).def.contains(str)){ansDef = j;break;}
         }
 
-        for(int j = 0;j<this.blockCnt;++j){
-            if(block_list.get(j).use.contains(str)){ansUse = j;break;}
-        }
+        /* for(int j = 0;j<this.blockCnt;++j){
+            if(blockMap.get(j).use.contains(str)){ansUse = j;break;}
+        } */
 
-        if(ansDef < ansUse){
+        /* if(ansDef < ansUse){
             ans[0] = 0;
             ans[1] = ansDef;
             return ans;}
@@ -229,7 +244,10 @@ class MethodTable{
             ans[0] = 1;
             ans[1] = ansUse;
             return ans;
-        }
+        } */
+
+        return ansDef;
+        
     }
     
     void updateLiveRanges(){
@@ -238,11 +256,9 @@ class MethodTable{
         
         while(itr.hasNext()){
             String str = itr.next();
-            int[] arr = this.getStart(str);
-            int start = arr[1];
+            int start = this.getStart(str);
             int end = this.getEnd(str);
             Tuple active_range = new Tuple(str,start,end);
-            active_range.isArg = arr[0];
             liveIntervalMap.put(str, active_range);
         }
     }
@@ -252,9 +268,9 @@ class MethodTable{
         //Perform linear scan register  allocation
         ArrayList<Tuple> liveIntervals = new ArrayList<Tuple>();
         ArrayList<Tuple> activeIntervals = new ArrayList<Tuple>();
-        ArrayList<Integer> activeRegisters = new ArrayList<Integer>();//store index of active registers
+        ArrayList<Integer> activeRegisters = new ArrayList<Integer>();
         
-        //maintain free register pool
+        //Maintain free register pool
         boolean [] freeRegPool = new boolean[18];
         for(int i=0;i<18;++i)freeRegPool[i] = true;
 
@@ -282,9 +298,9 @@ class MethodTable{
             }
         }
 
-        //LINEAR SCAN
+        //Linear Scan Allocation
         for(int i = 0;i< liveIntervals.size();++i){
-            //expire all old intervals
+            //Expire all old Intervals
             for(int j = 0;j < activeIntervals.size();){
                 if(activeIntervals.get(j).second >= liveIntervals.get(i).first){
                     break;
@@ -296,20 +312,21 @@ class MethodTable{
                 }
             }
 
-            //check if we need to spill
+            //Check if we need to Spill
             if(activeRegisters.size() == this.allRegCnt){
+
                 this.spillFlag = true;
-                //spill the current register
                 Tuple spill = activeIntervals.get(activeIntervals.size()-1);
+
                 if(spill.second > liveIntervals.get(i).second){
                     int freshReg = activeRegisters.get(activeRegisters.size()-1).intValue();
                     activeRegisters.remove(activeRegisters.size()-1);
                     activeIntervals.remove(activeIntervals.size()-1);
-                    //add spill to stack space
-                    //remove entry from reg_map
-                    reg_map.remove(spill.var);
-                    spill_map.put(spill.var, Integer.toString(spill_cnt++));
-                    //add to active
+                    //Add spill to stack space && remove entry from reg_map
+                    regMap.remove(spill.var);
+                    spillMap.put(spill.var, Integer.toString(spillCnt++));
+                    //Add i to active
+                    //Find position in sorted order
                     int pos = -1;
                     for(int j = 0;j < activeIntervals.size();++j){
                         if(activeIntervals.get(j).second >= liveIntervals.get(i).second){
@@ -317,33 +334,37 @@ class MethodTable{
                             break;
                         }
                     }
-                    //add at position pos
+                    //Add at position pos
                     if(pos == -1){
-                        activeIntervals.add(liveIntervals.get(i));activeRegisters.add(Integer.valueOf(freshReg));
+                        activeIntervals.add(liveIntervals.get(i));
+                        activeRegisters.add(Integer.valueOf(freshReg));
                     }
                     else{
-                        activeIntervals.add(pos, liveIntervals.get(i));activeRegisters.add(pos,Integer.valueOf(freshReg));
+                        activeIntervals.add(pos, liveIntervals.get(i));
+                        activeRegisters.add(pos,Integer.valueOf(freshReg));
                     }
 
                 }
                 else{
                     //add liveIntervals[i] to new stack location
-                    spill_map.put(liveIntervals.get(i).var,Integer.toString(spill_cnt++));
+                    spillMap.put(liveIntervals.get(i).var,Integer.toString(spillCnt++));
                 }
-
+                
             }
             else{
-                //assign a free register
+                //Assign a free register
                 int freshReg=0;
-                for(;freshReg<18;++freshReg){
+                while(freshReg<18){
+                    
                     if(freeRegPool[freshReg] == true){
                         freeRegPool[freshReg] = false;
                         break;
                     }
+                    ++freshReg;
                 }
-                //assign freeRegister to interval i 
-                reg_map.put(liveIntervals.get(i).var,this.allRegs[freshReg]);
-                //add to active
+                //Assign freshReg to interval i 
+                regMap.put(liveIntervals.get(i).var,this.allRegs[freshReg]);
+                //Add to active
                 int pos = -1;
                 for(int j = 0;j < activeIntervals.size();++j){
                     if(activeIntervals.get(j).second >= liveIntervals.get(i).second){
@@ -351,66 +372,88 @@ class MethodTable{
                         break;
                     }
                 }
-                //add at position pos
+                //Add at position pos
                 if(pos == -1){
-                    activeIntervals.add(liveIntervals.get(i));activeRegisters.add(Integer.valueOf(freshReg));
+                    activeIntervals.add(liveIntervals.get(i));
+                    activeRegisters.add(Integer.valueOf(freshReg));
                 }
                 else{
-                    activeIntervals.add(pos, liveIntervals.get(i));activeRegisters.add(pos,Integer.valueOf(freshReg));
+                    activeIntervals.add(pos, liveIntervals.get(i));
+                    activeRegisters.add(pos,Integer.valueOf(freshReg));
                 }
             }
         }
 
-        //debugLinearScan();
+        //this.debugLinearScan();
+        this.initializeStackSlots();
+    }
+
+    void initializeStackSlots(){
+
+        //space for function arguments
+        if(Integer.parseInt(this.argCnt) > 4){
+            this.stackSlotCnt += Integer.parseInt(this.argCnt) - 4;
+        }
+        //space for call arguments
+        if(this.maxCallArgCnt > 4){
+            this.stackSlotCnt += this.maxCallArgCnt - 4;
+        }
+        //space for spilled temps
+        this.stackSlotCnt+=this.spillCnt;
+        //space for calls
+        if(this.maxCallArgCnt > 0){
+            //save all t registers
+            this.stackSlotCnt +=10;
+        }
+        if(!this.fName.equals("MAIN")){
+            //no need to save s registers in MAIN
+            this.stackSlotCnt+=8;
+        }
     }
 
     void debugUseDef(){
-        System.out.println("#################"+ this.fName+"####################");
-        block_list.forEach((k,v)->{System.out.println("Block " + (1+k.intValue()) + "::");v.debugUseDef();});
+        System.out.println("In Function :: " + this.fName);
+        blockMap.forEach((k,v)->{System.out.println("Block " + (1+k.intValue()) + "::");v.debugUseDef();});
     }
 
     void debugLiveness(int iter){
-        Iterator itr = block_list.entrySet().iterator();
-        System.out.println("#################Iteration " + iter + " ###############");
+        Iterator itr = blockMap.entrySet().iterator();
+        System.out.println("~Iteration : " + iter );
         while(itr.hasNext()){
             Map.Entry pair= (Map.Entry)itr.next();
             Integer key = (Integer)pair.getKey();
             BlockTable node = (BlockTable)pair.getValue();
-            System.out.println("~~~~~~~~~~~~~~Block " + (key.intValue()) + "~~~~~~~~~~~~~");
-            //Printing use
+            System.out.println("##Block " + (key.intValue()) + " : ");
+            
             System.out.print("Use -> ");
             System.out.println(node.use);
-            //Printing def
             System.out.print("Def -> ");
             System.out.println(node.def);
-            //Printing in1
             System.out.print("In1 -> ");
             System.out.println(node.in1);
-            //Printing in
             System.out.print("In -> ");
             System.out.println(node.in);
-            //Printing out1
             System.out.print("Out1 -> ");
             System.out.println(node.out1);
-            //Printing out
             System.out.print("Out -> ");
             System.out.println(node.out);
         }
     }
 
     void debugLiveRanges(){
-        System.out.println("#################"+ this.fName+"####################");
+        System.out.println("In Function :: "+ this.fName);
         liveIntervalMap.forEach((k,v)->{System.out.print("For " + k + "->");v.print();});
     }
 
     void debugLinearScan(){
         //Print out reg_map and spill_map for program
-        System.out.println("In function :: " + this.fName);
+        System.out.println("In Function :: " + this.fName);
         System.out.println("Register mapping is :: ");
-        System.out.println(reg_map);
+        System.out.println(regMap);
         System.out.println("Spill mapping is :: ");
-        System.out.println(spill_map);
+        System.out.println(spillMap);
     }
+
 }
 
 class BlockTable{
@@ -532,32 +575,39 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         R _ret=null;
 
         n.f0.accept(this,(A)"1");
+        
         T.addMethod("MAIN","0");
         T.curr_method = T.mlist.get("MAIN");
+        
         n.f1.accept(this,(A)"1");
         n.f2.accept(this,(A)"1");
-        
-        //Do liveness analysis here
+
         T.curr_method.analyzeLiveness();
-        //Do register allocation here
-        T.curr_method.doLinearScan();
-        
+        T.curr_method.doLinearScan();        
         T.curr_method = null;
+        
         n.f3.accept(this,(A)"1");
         n.f4.accept(this,(A)"1");
         
-        //Do code generation here
-        
+        //Code Generation
+
         n.f0.accept(this,(A)"2");
+
         T.curr_method = T.mlist.get("MAIN");
+        System.out.println("MAIN [" + T.curr_method.argCnt + "] [" + T.curr_method.stackSlotCnt + "] [" 
+        + T.curr_method.maxCallArgCnt + "] " );
+         
         n.f1.accept(this,(A)"2");
         n.f2.accept(this,(A)"2");
+
+        System.out.println("END");
+        System.out.println("//SPILL STATUS = " + T.curr_method.spillFlag);
         T.curr_method = null;
+
         n.f3.accept(this,(A)"2");
         n.f4.accept(this,(A)"2");
 
         //T.debugUseDef();
-        System.out.println("Done !");
         return _ret;
     }
 
@@ -569,23 +619,34 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         String label = "";
 
         if(n.f0.present()){
-            //Check if a label is there
+            //Check if label is present
             for(int i=0;i<n.f0.size();++i){
 
-                //Label->check it
+                //Label
                 if(((NodeOptional)((NodeSequence)n.f0.elementAt(i)).elementAt(0)).present()){
                     label = (String) ((NodeSequence)n.f0.elementAt(i)).elementAt(0).accept(this,argu);
+
                     if(argu.toString().equals("1")){
                         T.curr_method.addLabel(label);
-                        T.curr_method.curr_label = label;
                     }
-                } else { label = ""; }  
 
-                //Stmt->accept it
-                ((NodeSequence)n.f0.elementAt(i)).elementAt(1).accept(this,argu);
-                if(argu.toString().equals("1")){
-                    T.curr_method.curr_label = null;
+                    T.curr_method.curr_label = label;
+                } 
+                else{
+                    label = "";
                 }
+
+                //Print label-need to check global??
+                if(argu.toString().equals("2")){
+                    if(!label.equals("")){
+                        System.out.println(label);
+                    }
+                }
+
+                //Statement
+                ((NodeSequence)n.f0.elementAt(i)).elementAt(1).accept(this,argu);
+                T.curr_method.curr_label = null;
+
             }
         }
 
@@ -607,7 +668,6 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         switch(argu.toString()){
             
             case "1": 
-            
             fName = (String)n.f0.accept(this, argu);
             n.f1.accept(this, argu);
             argCnt = (String)n.f2.accept(this, argu);
@@ -615,11 +675,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             T.addMethod(fName,argCnt);
             T.curr_method = T.mlist.get(fName);
             n.f4.accept(this, argu);
-            
-
-            //Do liveness analysis
             T.curr_method.analyzeLiveness();
-            //Do register allocation
             T.curr_method.doLinearScan();
             T.curr_method = null;
             break;
@@ -627,9 +683,17 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             case "2":
             fName = (String)n.f0.accept(this, argu);
             n.f1.accept(this, argu);
-            n.f2.accept(this, argu);
+            argCnt = (String)n.f2.accept(this, argu);
             n.f3.accept(this, argu);
+
+            T.curr_method = T.mlist.get(fName);
+            System.out.println(fName + " [" + argCnt + "] [" + T.curr_method.stackSlotCnt + "] ["
+                              + T.curr_method.maxCallArgCnt + "] " );
+
             n.f4.accept(this, argu);
+
+            System.out.println("//SPILL STATUS = " + T.curr_method.spillFlag);
+            T.curr_method = null;
             break;
         }
         return _ret;
@@ -657,6 +721,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     public R visit(NoOpStmt n, A argu) {
         R _ret=null;
         if(argu.toString().equals("1")){int index = T.curr_method.addBlock();}
+        if(argu.toString().equals("2")){System.out.println("\tNOOP");}
         n.f0.accept(this, argu);
         return _ret;
     }
@@ -667,6 +732,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     public R visit(ErrorStmt n, A argu) {
         R _ret=null;
         if(argu.toString().equals("1")){int index = T.curr_method.addBlock();}
+        if(argu.toString().equals("2")){System.out.println("\tERROR");}
         n.f0.accept(this, argu);
         return _ret;
     }
@@ -682,21 +748,31 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         String label = "";
         int index = 0;
 
-        if(argu.toString().equals("1")){
-            index = T.curr_method.addBlock();
-            T.curr_method.setBlock(index);
-        }
-        n.f0.accept(this, argu);
-        
-        tmp = (String)n.f1.accept(this, argu);
-        label = (String)n.f2.accept(this, argu);
-        
-        if(argu.toString().equals("1")){
-            T.curr_method.curr_block.addUse(tmp);
-            T.curr_method.addLabel(label);
-            //add label node as a successor to the current node
-            T.curr_method.curr_block.addSucc(T.curr_method.lbl_list.get(label));
-            T.curr_method.resetBlock();
+        switch(argu.toString()){
+            case "1":
+                index = T.curr_method.addBlock();
+                T.curr_method.setBlock(index);
+                n.f0.accept(this, argu);    
+                tmp = (String)n.f1.accept(this, argu);
+                label = (String)n.f2.accept(this, argu);
+                T.curr_method.curr_block.addUse(tmp);
+                T.curr_method.addLabel(label);
+                //add label node as a successor to the current node
+                T.curr_method.curr_block.addSucc(T.curr_method.labelMap.get(label));
+                T.curr_method.resetBlock();
+                break;
+            case "2":
+                n.f0.accept(this,argu);
+                tmp = (String)n.f1.accept(this,argu);
+                label = (String)n.f2.accept(this,argu);
+                
+                if(T.curr_method.regMap.containsKey(tmp)){
+                    //register mapped value
+                    System.out.println("\tCJUMP " + T.curr_method.regMap.get(tmp) + " " + label + " " );
+                }else{
+                    //spilled value-to do
+                }
+            break;
         }
         return _ret;
     }
@@ -718,9 +794,14 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
 
         if(argu.toString().equals("1")){
             T.curr_method.addLabel(label);
-            T.curr_method.curr_block.addSucc(T.curr_method.lbl_list.get(label));
+            T.curr_method.curr_block.addSucc(T.curr_method.labelMap.get(label));
             T.curr_method.resetBlock();
         }
+
+        if(argu.toString().equals("2")){
+            System.out.println("\tJUMP " + label + " ");
+        }
+
         return _ret;
     }
 
@@ -734,19 +815,41 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         R _ret=null;
         String tmp1 ="";
         String tmp2 = "";
+        String offset = "";
         if(argu.toString().equals("1")){
             T.curr_method.setBlock(T.curr_method.addBlock());
         }
 
         n.f0.accept(this, argu);
-        tmp1 = (String)n.f1.accept(this, argu);
-        n.f2.accept(this, argu);
-        tmp2 = (String)n.f3.accept(this, argu);
+        tmp1 = (String)  n.f1.accept(this, argu);
+        offset = (String)n.f2.accept(this, argu);
+        tmp2 = (String)  n.f3.accept(this, argu);
         
         if(argu.toString().equals("1")){
             T.curr_method.curr_block.addUse(tmp1);
             T.curr_method.curr_block.addUse(tmp2);
             T.curr_method.resetBlock();
+        }
+
+        if(argu.toString().equals("2")){
+            
+            if(T.curr_method.regMap.containsKey(tmp1)){
+                if(T.curr_method.regMap.containsKey(tmp2)){
+                    System.out.println("\tHSTORE " + T.curr_method.regMap.get(tmp1) + " " + offset + " " 
+                    + T.curr_method.regMap.get(tmp2) + " ");
+                }
+                else{
+
+                }
+            }else{
+                if(T.curr_method.regMap.containsKey(tmp2)){
+
+                }
+                else{
+
+                }
+            }
+
         }
 
         return _ret;
@@ -763,7 +866,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         R _ret=null;
         String tmp1 ="";
         String tmp2 = "";
-        
+        String offset = "";
         if(argu.toString().equals("1")){
             T.curr_method.setBlock(T.curr_method.addBlock());
         }
@@ -771,12 +874,31 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         n.f0.accept(this, argu);
         tmp1 = (String)n.f1.accept(this, argu);
         tmp2 = (String)n.f2.accept(this, argu);
-        n.f3.accept(this, argu);
+        offset= (String)n.f3.accept(this, argu);
 
         if(argu.toString().equals("1")){
             T.curr_method.curr_block.addDef(tmp1);
             T.curr_method.curr_block.addUse(tmp2);
             T.curr_method.resetBlock();
+        }
+
+        if(argu.toString().equals("2")){
+            if(T.curr_method.regMap.containsKey(tmp1)){
+                if(T.curr_method.regMap.containsKey(tmp2)){
+                    System.out.println("\tHSTORE " + T.curr_method.regMap.get(tmp1) + " " + offset + " " 
+                    + T.curr_method.regMap.get(tmp2) + " ");
+                }
+                else{
+
+                }
+            }else{
+                if(T.curr_method.regMap.containsKey(tmp2)){
+
+                }
+                else{
+
+                }
+            }
         }
 
         return _ret;
@@ -788,20 +910,31 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     * f2 -> Exp()
     */
     public R visit(MoveStmt n, A argu) {
-        //def
+        //Def
         R _ret=null;
         String tmp1 = "";
+        String expr = "";
+        
         if(argu.toString().equals("1")){
             T.curr_method.setBlock(T.curr_method.addBlock());
         }
         
         n.f0.accept(this, argu);
         tmp1 = (String)n.f1.accept(this, argu);
-        n.f2.accept(this, argu);
+        expr = (String)n.f2.accept(this, argu);
 
         if(argu.toString().equals("1")){
             T.curr_method.curr_block.addDef(tmp1);
             T.curr_method.resetBlock();
+        }
+
+        if(argu.toString().equals("2")){
+            if(T.curr_method.regMap.containsKey(tmp1)){
+                System.out.print("\tMOVE " + T.curr_method.regMap.get(tmp1) + " " + expr + "\n");
+            }
+            else{
+                //to -do spilling
+            }
         }
 
         return _ret;
@@ -813,16 +946,21 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     */
     public R visit(PrintStmt n, A argu) {
         R _ret=null;
-        
+        String inst0 = "";
+        String inst1 = "";
         if(argu.toString().equals("1")){
             T.curr_method.setBlock(T.curr_method.addBlock());
         }
 
-        n.f0.accept(this, argu);
-        n.f1.accept(this, argu);
+        inst0 = (String)n.f0.accept(this, argu);
+        inst1 = (String)n.f1.accept(this, argu);
 
         if(argu.toString().equals("1")){
             T.curr_method.resetBlock();
+        }
+
+        if(argu.toString().equals("2")){
+            System.out.println("\t" + inst0 + " " + inst1);
         }
 
         return _ret;
@@ -835,9 +973,21 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     *       | SimpleExp()
     */
     public R visit(Exp n, A argu) {
-        
         R _ret=null;
-        n.f0.accept(this, argu);
+        _ret = n.f0.accept(this, argu);
+        if(n.f0.which == 3){
+            //If simpleExp is a temp, then convert it to a register
+            String str = (String)_ret;
+            if(str.charAt(0) == 'T'){
+                //convert it to register
+                if(T.curr_method.regMap.containsKey(str)){
+                    _ret = (R)T.curr_method.regMap.get(str);
+                }
+                else{
+                    //register is spilled
+                }
+            }
+        }
         return _ret;
     }
 
@@ -850,6 +1000,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     */
     public R visit(StmtExp n, A argu) {
         R _ret=null;
+        String rval = "";
         switch(argu.toString()){
 
             case "1":
@@ -865,14 +1016,34 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             
             case "2":
             n.f0.accept(this, argu);
+
+            //Save s-registers
+            for(int i=0;i<=7;++i){
+                System.out.println("\tASTORE SPILLEDARG "+i+" s" + i);
+            }
+
             n.f1.accept(this, argu);
             n.f2.accept(this, argu);
-            n.f3.accept(this, argu);
-            n.f4.accept(this, argu);
-            break;
 
-            default:
-            //do nothing
+            rval = (String)n.f3.accept(this, argu);
+            if(rval.charAt(0) == 'T'){
+                //to be changed to check spill
+                System.out.println("\tMOVE v0 " + T.curr_method.regMap.get(rval));
+            }
+            else{
+                //Integer literal
+                System.out.println("\tMOVE v0 " + rval);
+            }
+
+            n.f4.accept(this, argu);
+            
+            //Restore s- registers
+            for(int i = 0;i <= 7 ; ++i){
+                System.out.println("\tALOAD s" + i +" SPILLEDARG " + i);
+            }
+
+            System.out.println("END");
+            break;
         }
         return _ret;
     }
@@ -886,20 +1057,71 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     */
     public R visit(Call n, A argu) {
         R _ret=null;
-        String tmp;
-        n.f0.accept(this, argu);
-        n.f1.accept(this, argu);
+        
+        if(argu.toString().equals("2")){
+            //Save all t regs
+            for(int i = 0;i<=9;++i){
+                //tbcc
+                System.out.println("\tASTORE SPILLEDARG " + (i+8) + " t" + i);
+            }
+        }
+        
+        String tmp= "";
+        String inst0= "";
+        String inst1 = "";
+        
+        inst0 = (String)n.f0.accept(this, argu);
+        inst1 = (String)n.f1.accept(this, argu);
         n.f2.accept(this, argu);
-
+        
         if(n.f3.present()){
-            if(argu.toString().equals("1")){T.curr_method.maxArgCnt = Math.max(T.curr_method.maxArgCnt,n.f3.size());}
+            if(argu.toString().equals("1")){
+                T.curr_method.maxCallArgCnt = Math.max(T.curr_method.maxCallArgCnt,n.f3.size());
+            }
             for(int i=0;i<n.f3.size();++i){
                 tmp = (String)((Node)n.f3.elementAt(i)).accept(this,argu);
-                if(argu.toString().equals("1")){T.curr_method.curr_block.addUse(tmp);}
+                if(argu.toString().equals("1")){
+                    T.curr_method.curr_block.addUse(tmp);
+                }
+                if(argu.toString().equals("2")){
+                    if(i < 4){
+                        if(T.curr_method.regMap.containsKey(tmp)){
+                            System.out.println("\tMOVE a" + i + " " + T.curr_method.regMap.get(tmp) + " ");
+                        }
+                        else{
+                            //temp is spilt
+                        }
+                    }
+                    else{
+                        //a is spilt
+                        if(T.curr_method.regMap.containsKey(tmp)){
+                            System.out.println("\tMOVE a" + i + " " + T.curr_method.regMap.get(tmp) + " ");
+                        }
+                        else{
+                            //temp is spilt
+                        }
+                    }
+                }
+            }
+        }
+
+        if(argu.toString().equals("2")){
+            if(T.curr_method.regMap.containsKey(inst1)){
+                System.out.println("\t"+inst0 +" "  + T.curr_method.regMap.get(inst1) + " ");
+            }
+            else{
+                //spilt calling function temp
+            }
+
+            //Restore all t regs
+            for(int i = 0;i<=9;++i){
+                //tbc
+                System.out.println("\tALOAD t" + i + " SPILLEDARG " + (i+8) + " ");
             }
         }
 
         n.f4.accept(this, argu);
+        _ret = (R)("v0");
         return _ret;
     }
 
@@ -909,8 +1131,25 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     */
     public R visit(HAllocate n, A argu) {
         R _ret=null;
-        n.f0.accept(this, argu);
-        n.f1.accept(this, argu);
+        String inst0 = "";
+        String inst1 = "";
+        inst0 = (String)n.f0.accept(this, argu);
+        inst1 = (String)n.f1.accept(this, argu);
+        
+        if(argu.toString().equals("2")){
+            if(inst1.charAt(0) == 'T'){
+                //Temporary
+                if(T.curr_method.regMap.containsKey(inst1)){
+                    //has register value
+                    _ret = (R)(inst0 + " "  + T.curr_method.regMap.get(inst1));
+                }else{
+                    //has been spilled
+                }
+            }else{
+                //Integer literal or label
+                _ret = (R)(inst0 + " " + inst1);
+            }
+        }
         return _ret;
     }
 
@@ -921,16 +1160,54 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     */
     public R visit(BinOp n, A argu) {
         R _ret=null;
-        String temp = "";
-        n.f0.accept(this, argu);
-        temp = (String)n.f1.accept(this, argu);
+        String inst0 = "";
+        String inst1 = "";
+        String inst2= "";
+        inst0 = (String)n.f0.accept(this, argu);
+        inst1 = (String)n.f1.accept(this, argu);
         
         if(argu.toString().equals("1")){
-            T.curr_method.curr_block.addUse(temp);    
+            T.curr_method.curr_block.addUse(inst1);    
         }
 
-        n.f2.accept(this, argu);
+        inst2 = (String)n.f2.accept(this, argu);
         
+        //return instruction itself
+        if(argu.toString().equals("2")){
+            if(T.curr_method.regMap.containsKey(inst1)){
+                //mapped temp1
+                if(inst2.charAt(0) == 'T'){
+                    //Temporary
+                    if(T.curr_method.regMap.containsKey(inst2)){
+                        //mapped temp2
+                        _ret = (R)(inst0 + " " + T.curr_method.regMap.get(inst1) + " " + T.curr_method.regMap.get(inst2) + " ");
+                    }
+                    else{
+                        //temp 2 is spilt-tbd
+
+                    }
+                }
+                else{
+                    //Integer literal
+                    _ret = (R)(inst0 + " " + T.curr_method.regMap.get(inst1) + " " + inst2 + " ");
+                }
+            }else{
+                //spilt temp1
+                if(inst2.charAt(0) == 'T'){
+                    //Temporary
+                    if(T.curr_method.regMap.containsKey(inst2)){
+                        //mapped temp2
+                    }
+                    else{
+                        //both are spilt
+                    }
+                }
+                else{
+                    //Integer literal
+
+                }
+            }
+        }
         return _ret;
     }
 
@@ -944,7 +1221,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     */
     public R visit(Operator n, A argu) {
         R _ret=null;
-        n.f0.accept(this, argu);
+        _ret = n.f0.accept(this, argu);
         return _ret;
     }
 
@@ -957,7 +1234,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         R _ret=null;
         _ret = n.f0.accept(this, argu);
         if(n.f0.which == 0){
-            //save temp as a def
+            //save temp as a use
             if(argu.toString().equals("1")){T.curr_method.curr_block.addUse((String)_ret);}
         }
         return _ret;
