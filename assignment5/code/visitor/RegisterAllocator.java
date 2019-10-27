@@ -229,7 +229,9 @@ class MethodTable{
         //return last in
         int ans = 0;
         for(int j = this.blockCnt - 1; j>=0; --j){
-            if(blockMap.get(j).in.contains(str)){ans = j;break;}
+            if(blockMap.get(j).in.contains(str)){ans = j;
+                break;
+            }
         }
         return ans;
     }
@@ -344,7 +346,7 @@ class MethodTable{
                     //Find position in sorted order
                     int pos = -1;
                     for(int j = 0;j < activeIntervals.size();++j){
-                        if(activeIntervals.get(j).second >= liveIntervals.get(i).second){
+                        if(activeIntervals.get(j).second > liveIntervals.get(i).second){
                             pos = j;
                             break;
                         }
@@ -382,7 +384,7 @@ class MethodTable{
                 //Add to active
                 int pos = -1;
                 for(int j = 0;j < activeIntervals.size();++j){
-                    if(activeIntervals.get(j).second >= liveIntervals.get(i).second){
+                    if(activeIntervals.get(j).second > liveIntervals.get(i).second){
                         pos = j;
                         break;
                     }
@@ -627,7 +629,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         n.f2.accept(this,(A)"2");
 
         System.out.println("END");
-        System.out.println("//SPILL STATUS = " + T.curr_method.spillFlag);
+        System.out.println("//SPILL STATUS " + T.curr_method.spillFlag);
         T.curr_method = null;
 
         n.f3.accept(this,(A)"2");
@@ -828,7 +830,6 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         if(argu.toString().equals("2")){
             System.out.println("\tJUMP " + label + " ");
         }
-
         return _ret;
     }
 
