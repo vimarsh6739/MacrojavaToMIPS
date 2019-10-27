@@ -398,8 +398,6 @@ class MethodTable{
                 }
             }
         }
-
-        System.out.println(freeRegPool[0]);
         this.initializeStackSlots();
     }
 
@@ -422,7 +420,7 @@ class MethodTable{
         //t-registers start here
         this.regBaseT = this.stackSlotCnt;
         //Only save the t-registers if there is a function call(optimization)
-        if(this.maxCallArgCnt > 0){this.stackSlotCnt +=10;}
+        if(this.maxCallArgCnt >= 0){this.stackSlotCnt +=10;}
 
         //spilled variables start here
         this.spillBase = this.stackSlotCnt;
@@ -436,7 +434,7 @@ class MethodTable{
         }
 
         this.stackSlotCnt+=this.spillCnt;     
-        this.debugLinearScan();
+        //this.debugLinearScan();
     }
 
     void debugUseDef(){
@@ -619,7 +617,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         
         //Code Generation
 
-        /* n.f0.accept(this,(A)"2");
+        n.f0.accept(this,(A)"2");
 
         T.curr_method = T.mlist.get("MAIN");
         System.out.println("MAIN [" + T.curr_method.argCnt + "] [" + T.curr_method.stackSlotCnt + "] [" 
@@ -633,7 +631,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         T.curr_method = null;
 
         n.f3.accept(this,(A)"2");
-        n.f4.accept(this,(A)"2"); */
+        n.f4.accept(this,(A)"2");
 
         //T.debugUseDef();
         return _ret;
@@ -1088,8 +1086,13 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
 
             rval = (String)n.f3.accept(this, argu);
             if(rval.startsWith("TEMP")){
-                //to be changed to check spill
-                System.out.println("\tMOVE v0 " + T.curr_method.regMap.get(rval));
+                if(T.curr_method.regMap.containsKey(rval)){
+                    System.out.println("\tMOVE v0 " + T.curr_method.regMap.get(rval));
+                }
+                else{
+                    System.out.println("\tALOAD v1 SPILLEDARG "+  T.curr_method.spillMap.get(rval));
+                    System.out.println("\tMOVE v0 v1 ");
+                }
             }
             else{
                 //Integer literal
@@ -1100,7 +1103,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
             
             //Restore s- registers
             for(int i = 0;i <= 7 ; ++i){
-                System.out.println("\tALOAD s" + (T.curr_method.regBaseS + i) +" SPILLEDARG " + i);
+                System.out.println("\tALOAD s" + (i) +" SPILLEDARG " + (T.curr_method.regBaseS +i));
             }
             System.out.println("END");
             break;
