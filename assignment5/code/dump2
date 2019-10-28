@@ -1,0 +1,3673 @@
+In Function :: MAIN
+For TEMP2-> is a value from 1 to 2
+For TEMP3-> is a value from 2 to 3
+For TEMP1-> is a value from 3 to 9
+For TEMP5-> is a value from 4 to 5
+For TEMP6-> is a value from 5 to 6
+For TEMP4-> is a value from 6 to 10
+For TEMP7-> is a value from 7 to 8
+For TEMP0-> is a value from 10 to 13
+For TEMP8-> is a value from 11 to 12
+For TEMP9-> is a value from 12 to 13
+For TEMP10-> is a value from 13 to 14
+In Function :: BT_Start
+For TEMP4-> is a value from 1 to 2
+For TEMP5-> is a value from 2 to 3
+For TEMP3-> is a value from 3 to 59
+For TEMP7-> is a value from 4 to 5
+For TEMP8-> is a value from 5 to 6
+For TEMP6-> is a value from 6 to 60
+For TEMP9-> is a value from 7 to 8
+For TEMP10-> is a value from 9 to 10
+For TEMP11-> is a value from 11 to 12
+For TEMP12-> is a value from 13 to 14
+For TEMP13-> is a value from 15 to 16
+For TEMP14-> is a value from 17 to 18
+For TEMP15-> is a value from 19 to 20
+For TEMP16-> is a value from 21 to 22
+For TEMP17-> is a value from 23 to 24
+For TEMP18-> is a value from 25 to 26
+For TEMP19-> is a value from 27 to 28
+For TEMP20-> is a value from 29 to 30
+For TEMP21-> is a value from 31 to 32
+For TEMP22-> is a value from 33 to 34
+For TEMP23-> is a value from 35 to 36
+For TEMP24-> is a value from 37 to 38
+For TEMP25-> is a value from 39 to 40
+For TEMP26-> is a value from 41 to 42
+For TEMP27-> is a value from 43 to 44
+For TEMP28-> is a value from 45 to 46
+For TEMP30-> is a value from 47 to 48
+For TEMP29-> is a value from 48 to 58
+For TEMP31-> is a value from 49 to 50
+For TEMP32-> is a value from 50 to 51
+For TEMP33-> is a value from 52 to 54
+For TEMP34-> is a value from 53 to 54
+For TEMP35-> is a value from 55 to 56
+For TEMP36-> is a value from 56 to 57
+For TEMP2-> is a value from 60 to 167
+For TEMP38-> is a value from 61 to 65
+For TEMP39-> is a value from 62 to 63
+For TEMP40-> is a value from 63 to 65
+For TEMP41-> is a value from 64 to 65
+For TEMP42-> is a value from 65 to 66
+For TEMP37-> is a value from 66 to 0
+For TEMP43-> is a value from 67 to 70
+For TEMP44-> is a value from 68 to 69
+For TEMP45-> is a value from 69 to 70
+For TEMP46-> is a value from 70 to 71
+For TEMP47-> is a value from 72 to 73
+For TEMP48-> is a value from 74 to 78
+For TEMP49-> is a value from 75 to 76
+For TEMP50-> is a value from 76 to 78
+For TEMP51-> is a value from 77 to 78
+For TEMP52-> is a value from 78 to 79
+For TEMP53-> is a value from 80 to 83
+For TEMP54-> is a value from 81 to 82
+For TEMP55-> is a value from 82 to 83
+For TEMP56-> is a value from 83 to 84
+For TEMP57-> is a value from 85 to 89
+For TEMP58-> is a value from 86 to 87
+For TEMP59-> is a value from 87 to 89
+For TEMP60-> is a value from 88 to 89
+For TEMP61-> is a value from 89 to 90
+For TEMP62-> is a value from 91 to 95
+For TEMP63-> is a value from 92 to 93
+For TEMP64-> is a value from 93 to 95
+For TEMP65-> is a value from 94 to 95
+For TEMP66-> is a value from 95 to 96
+For TEMP67-> is a value from 97 to 101
+For TEMP68-> is a value from 98 to 99
+For TEMP69-> is a value from 99 to 101
+For TEMP70-> is a value from 100 to 101
+For TEMP71-> is a value from 101 to 102
+For TEMP72-> is a value from 103 to 107
+For TEMP73-> is a value from 104 to 105
+For TEMP74-> is a value from 105 to 107
+For TEMP75-> is a value from 106 to 107
+For TEMP76-> is a value from 107 to 108
+For TEMP77-> is a value from 109 to 113
+For TEMP78-> is a value from 110 to 111
+For TEMP79-> is a value from 111 to 113
+For TEMP80-> is a value from 112 to 113
+For TEMP81-> is a value from 113 to 114
+For TEMP82-> is a value from 115 to 119
+For TEMP83-> is a value from 116 to 117
+For TEMP84-> is a value from 117 to 119
+For TEMP85-> is a value from 118 to 119
+For TEMP86-> is a value from 119 to 120
+For TEMP87-> is a value from 121 to 124
+For TEMP88-> is a value from 122 to 123
+For TEMP89-> is a value from 123 to 124
+For TEMP90-> is a value from 124 to 125
+For TEMP91-> is a value from 126 to 130
+For TEMP92-> is a value from 127 to 128
+For TEMP93-> is a value from 128 to 130
+For TEMP94-> is a value from 129 to 130
+For TEMP95-> is a value from 130 to 131
+For TEMP96-> is a value from 132 to 136
+For TEMP97-> is a value from 133 to 134
+For TEMP98-> is a value from 134 to 136
+For TEMP99-> is a value from 135 to 136
+For TEMP100-> is a value from 136 to 137
+For TEMP101-> is a value from 138 to 142
+For TEMP102-> is a value from 139 to 140
+For TEMP103-> is a value from 140 to 142
+For TEMP104-> is a value from 141 to 142
+For TEMP105-> is a value from 142 to 143
+For TEMP106-> is a value from 144 to 148
+For TEMP107-> is a value from 145 to 146
+For TEMP108-> is a value from 146 to 148
+For TEMP109-> is a value from 147 to 148
+For TEMP110-> is a value from 148 to 149
+For TEMP111-> is a value from 150 to 154
+For TEMP112-> is a value from 151 to 152
+For TEMP113-> is a value from 152 to 154
+For TEMP114-> is a value from 153 to 154
+For TEMP115-> is a value from 154 to 155
+For TEMP116-> is a value from 156 to 160
+For TEMP117-> is a value from 157 to 158
+For TEMP118-> is a value from 158 to 160
+For TEMP119-> is a value from 159 to 160
+For TEMP120-> is a value from 160 to 161
+For TEMP121-> is a value from 162 to 165
+For TEMP122-> is a value from 163 to 164
+For TEMP123-> is a value from 164 to 165
+For TEMP124-> is a value from 165 to 166
+For TEMP125-> is a value from 167 to 171
+For TEMP126-> is a value from 168 to 169
+For TEMP127-> is a value from 169 to 171
+For TEMP128-> is a value from 170 to 171
+For TEMP129-> is a value from 171 to 172
+For TEMP130-> is a value from 173 to 174
+In Function :: Tree_Init
+For TEMP0-> is a value from 0 to 5
+For TEMP1-> is a value from 0 to 1
+For TEMP3-> is a value from 2 to 3
+For TEMP4-> is a value from 4 to 5
+For TEMP5-> is a value from 6 to 7
+In Function :: Tree_SetRight
+For TEMP0-> is a value from 0 to 1
+For TEMP1-> is a value from 0 to 1
+For TEMP3-> is a value from 2 to 3
+In Function :: Tree_SetLeft
+For TEMP0-> is a value from 0 to 1
+For TEMP1-> is a value from 0 to 1
+For TEMP3-> is a value from 2 to 3
+In Function :: Tree_GetRight
+For TEMP2-> is a value from 1 to 2
+For TEMP0-> is a value from 0 to 1
+In Function :: Tree_GetLeft
+For TEMP2-> is a value from 1 to 2
+For TEMP0-> is a value from 0 to 1
+In Function :: Tree_GetKey
+For TEMP2-> is a value from 1 to 2
+For TEMP0-> is a value from 0 to 1
+In Function :: Tree_SetKey
+For TEMP0-> is a value from 0 to 1
+For TEMP1-> is a value from 0 to 1
+For TEMP3-> is a value from 2 to 3
+In Function :: Tree_GetHas_Right
+For TEMP2-> is a value from 1 to 2
+For TEMP0-> is a value from 0 to 1
+In Function :: Tree_GetHas_Left
+For TEMP2-> is a value from 1 to 2
+For TEMP0-> is a value from 0 to 1
+In Function :: Tree_SetHas_Left
+For TEMP0-> is a value from 0 to 1
+For TEMP1-> is a value from 0 to 1
+For TEMP3-> is a value from 2 to 3
+In Function :: Tree_SetHas_Right
+For TEMP0-> is a value from 0 to 1
+For TEMP1-> is a value from 0 to 1
+For TEMP3-> is a value from 2 to 3
+In Function :: Tree_Compare
+For TEMP5-> is a value from 1 to 2
+For TEMP4-> is a value from 2 to 28
+For TEMP7-> is a value from 3 to 4
+For TEMP8-> is a value from 4 to 5
+For TEMP2-> is a value from 0 to 7
+For TEMP6-> is a value from 5 to 15
+For TEMP10-> is a value from 6 to 7
+For TEMP11-> is a value from 7 to 8
+For TEMP9-> is a value from 8 to 9
+For TEMP12-> is a value from 9 to 10
+For TEMP1-> is a value from 0 to 18
+For TEMP13-> is a value from 11 to 12
+For TEMP15-> is a value from 14 to 15
+For TEMP16-> is a value from 15 to 16
+For TEMP14-> is a value from 16 to 18
+For TEMP17-> is a value from 17 to 19
+For TEMP18-> is a value from 18 to 19
+For TEMP19-> is a value from 19 to 20
+For TEMP20-> is a value from 21 to 22
+For TEMP21-> is a value from 24 to 25
+In Function :: Tree_Insert
+For TEMP5-> is a value from 1 to 2
+For TEMP6-> is a value from 2 to 3
+For TEMP4-> is a value from 3 to 59
+For TEMP8-> is a value from 4 to 5
+For TEMP9-> is a value from 5 to 6
+For TEMP7-> is a value from 6 to 60
+For TEMP10-> is a value from 7 to 8
+For TEMP11-> is a value from 9 to 10
+For TEMP12-> is a value from 11 to 12
+For TEMP13-> is a value from 13 to 14
+For TEMP14-> is a value from 15 to 16
+For TEMP15-> is a value from 17 to 18
+For TEMP16-> is a value from 19 to 20
+For TEMP17-> is a value from 21 to 22
+For TEMP18-> is a value from 23 to 24
+For TEMP19-> is a value from 25 to 26
+For TEMP20-> is a value from 27 to 28
+For TEMP21-> is a value from 29 to 30
+For TEMP22-> is a value from 31 to 32
+For TEMP23-> is a value from 33 to 34
+For TEMP24-> is a value from 35 to 36
+For TEMP25-> is a value from 37 to 38
+For TEMP26-> is a value from 39 to 40
+For TEMP27-> is a value from 41 to 42
+For TEMP28-> is a value from 43 to 44
+For TEMP29-> is a value from 45 to 46
+For TEMP31-> is a value from 47 to 48
+For TEMP30-> is a value from 48 to 58
+For TEMP32-> is a value from 49 to 50
+For TEMP33-> is a value from 50 to 51
+For TEMP34-> is a value from 52 to 54
+For TEMP35-> is a value from 53 to 54
+For TEMP36-> is a value from 55 to 56
+For TEMP37-> is a value from 56 to 57
+For TEMP3-> is a value from 60 to 132
+For TEMP39-> is a value from 61 to 64
+For TEMP40-> is a value from 62 to 63
+For TEMP41-> is a value from 63 to 64
+For TEMP42-> is a value from 64 to 65
+For TEMP1-> is a value from 0 to 132
+For TEMP38-> is a value from 65 to 0
+For TEMP43-> is a value from 66 to 132
+For TEMP0-> is a value from 0 to 66
+For TEMP45-> is a value from 67 to 68
+For TEMP44-> is a value from 68 to 132
+For TEMP47-> is a value from 70 to 73
+For TEMP48-> is a value from 71 to 72
+For TEMP49-> is a value from 72 to 73
+For TEMP50-> is a value from 73 to 74
+For TEMP46-> is a value from 74 to 76
+For TEMP52-> is a value from 75 to 76
+For TEMP53-> is a value from 76 to 77
+For TEMP51-> is a value from 77 to 78
+For TEMP54-> is a value from 78 to 79
+For TEMP55-> is a value from 80 to 83
+For TEMP56-> is a value from 81 to 82
+For TEMP57-> is a value from 82 to 83
+For TEMP58-> is a value from 83 to 84
+For TEMP59-> is a value from 85 to 88
+For TEMP60-> is a value from 86 to 87
+For TEMP61-> is a value from 87 to 88
+For TEMP62-> is a value from 88 to 89
+For TEMP63-> is a value from 91 to 92
+For TEMP64-> is a value from 93 to 97
+For TEMP65-> is a value from 94 to 95
+For TEMP66-> is a value from 95 to 97
+For TEMP67-> is a value from 96 to 97
+For TEMP68-> is a value from 97 to 98
+For TEMP69-> is a value from 99 to 102
+For TEMP70-> is a value from 100 to 101
+For TEMP71-> is a value from 101 to 102
+For TEMP72-> is a value from 102 to 103
+For TEMP73-> is a value from 106 to 109
+For TEMP74-> is a value from 107 to 108
+For TEMP75-> is a value from 108 to 109
+For TEMP76-> is a value from 109 to 110
+For TEMP77-> is a value from 111 to 114
+For TEMP78-> is a value from 112 to 113
+For TEMP79-> is a value from 113 to 114
+For TEMP80-> is a value from 114 to 115
+For TEMP81-> is a value from 117 to 118
+For TEMP82-> is a value from 119 to 123
+For TEMP83-> is a value from 120 to 121
+For TEMP84-> is a value from 121 to 123
+For TEMP85-> is a value from 122 to 123
+For TEMP86-> is a value from 123 to 124
+For TEMP87-> is a value from 125 to 128
+For TEMP88-> is a value from 126 to 127
+For TEMP89-> is a value from 127 to 128
+For TEMP90-> is a value from 128 to 129
+For TEMP91-> is a value from 134 to 135
+In Function :: Tree_Delete
+For TEMP3-> is a value from 1 to 102
+For TEMP0-> is a value from 0 to 102
+For TEMP4-> is a value from 2 to 102
+For TEMP6-> is a value from 3 to 4
+For TEMP5-> is a value from 4 to 102
+For TEMP8-> is a value from 5 to 6
+For TEMP7-> is a value from 6 to 104
+For TEMP10-> is a value from 7 to 8
+For TEMP9-> is a value from 8 to 102
+For TEMP12-> is a value from 10 to 13
+For TEMP13-> is a value from 11 to 12
+For TEMP14-> is a value from 12 to 13
+For TEMP15-> is a value from 13 to 14
+For TEMP11-> is a value from 14 to 39
+For TEMP17-> is a value from 15 to 16
+For TEMP18-> is a value from 16 to 17
+For TEMP16-> is a value from 17 to 18
+For TEMP19-> is a value from 18 to 19
+For TEMP1-> is a value from 0 to 102
+For TEMP20-> is a value from 20 to 23
+For TEMP21-> is a value from 21 to 22
+For TEMP22-> is a value from 22 to 23
+For TEMP23-> is a value from 23 to 24
+For TEMP24-> is a value from 26 to 29
+For TEMP25-> is a value from 27 to 28
+For TEMP26-> is a value from 28 to 29
+For TEMP27-> is a value from 29 to 30
+For TEMP28-> is a value from 32 to 33
+For TEMP30-> is a value from 36 to 37
+For TEMP31-> is a value from 37 to 38
+For TEMP29-> is a value from 38 to 39
+For TEMP32-> is a value from 39 to 40
+For TEMP33-> is a value from 41 to 44
+For TEMP34-> is a value from 42 to 43
+For TEMP35-> is a value from 43 to 44
+For TEMP36-> is a value from 44 to 45
+For TEMP37-> is a value from 47 to 50
+For TEMP38-> is a value from 48 to 49
+For TEMP39-> is a value from 49 to 50
+For TEMP40-> is a value from 50 to 51
+For TEMP41-> is a value from 53 to 54
+For TEMP43-> is a value from 58 to 59
+For TEMP42-> is a value from 59 to 77
+For TEMP44-> is a value from 60 to 65
+For TEMP45-> is a value from 61 to 64
+For TEMP46-> is a value from 62 to 63
+For TEMP47-> is a value from 63 to 64
+For TEMP48-> is a value from 64 to 65
+For TEMP49-> is a value from 65 to 66
+For TEMP50-> is a value from 67 to 72
+For TEMP51-> is a value from 68 to 71
+For TEMP52-> is a value from 69 to 70
+For TEMP53-> is a value from 70 to 71
+For TEMP54-> is a value from 71 to 72
+For TEMP55-> is a value from 72 to 73
+For TEMP56-> is a value from 74 to 75
+For TEMP58-> is a value from 78 to 79
+For TEMP57-> is a value from 79 to 0
+For TEMP59-> is a value from 81 to 84
+For TEMP60-> is a value from 82 to 83
+For TEMP61-> is a value from 83 to 84
+For TEMP62-> is a value from 84 to 85
+For TEMP63-> is a value from 88 to 91
+For TEMP64-> is a value from 89 to 90
+For TEMP65-> is a value from 90 to 91
+For TEMP66-> is a value from 91 to 92
+For TEMP67-> is a value from 94 to 95
+For TEMP68-> is a value from 96 to 97
+For TEMP69-> is a value from 100 to 101
+In Function :: Tree_Remove
+For TEMP4-> is a value from 1 to 4
+For TEMP2-> is a value from 0 to 23
+For TEMP5-> is a value from 2 to 3
+For TEMP6-> is a value from 3 to 4
+For TEMP7-> is a value from 4 to 5
+For TEMP9-> is a value from 6 to 9
+For TEMP0-> is a value from 0 to 58
+For TEMP10-> is a value from 7 to 8
+For TEMP11-> is a value from 8 to 9
+For TEMP12-> is a value from 9 to 10
+For TEMP1-> is a value from 0 to 61
+For TEMP8-> is a value from 10 to 0
+For TEMP13-> is a value from 12 to 15
+For TEMP14-> is a value from 13 to 14
+For TEMP15-> is a value from 14 to 15
+For TEMP16-> is a value from 15 to 16
+For TEMP17-> is a value from 17 to 20
+For TEMP18-> is a value from 18 to 19
+For TEMP19-> is a value from 19 to 20
+For TEMP20-> is a value from 20 to 21
+For TEMP22-> is a value from 23 to 26
+For TEMP23-> is a value from 24 to 25
+For TEMP24-> is a value from 25 to 26
+For TEMP25-> is a value from 26 to 27
+For TEMP21-> is a value from 27 to 40
+For TEMP28-> is a value from 28 to 31
+For TEMP29-> is a value from 29 to 30
+For TEMP30-> is a value from 30 to 31
+For TEMP31-> is a value from 31 to 32
+For TEMP27-> is a value from 32 to 35
+For TEMP32-> is a value from 33 to 34
+For TEMP33-> is a value from 34 to 35
+For TEMP34-> is a value from 35 to 36
+For TEMP26-> is a value from 36 to 40
+For TEMP35-> is a value from 37 to 40
+For TEMP36-> is a value from 38 to 39
+For TEMP37-> is a value from 39 to 40
+For TEMP38-> is a value from 40 to 41
+For TEMP39-> is a value from 42 to 46
+For TEMP40-> is a value from 43 to 44
+For TEMP41-> is a value from 44 to 46
+For TEMP42-> is a value from 45 to 46
+For TEMP43-> is a value from 46 to 47
+For TEMP44-> is a value from 48 to 52
+For TEMP45-> is a value from 49 to 50
+For TEMP46-> is a value from 50 to 52
+For TEMP47-> is a value from 51 to 52
+For TEMP48-> is a value from 52 to 53
+For TEMP49-> is a value from 55 to 59
+For TEMP50-> is a value from 56 to 57
+For TEMP51-> is a value from 57 to 59
+For TEMP52-> is a value from 58 to 59
+For TEMP53-> is a value from 59 to 60
+For TEMP54-> is a value from 61 to 65
+For TEMP55-> is a value from 62 to 63
+For TEMP56-> is a value from 63 to 65
+For TEMP57-> is a value from 64 to 65
+For TEMP58-> is a value from 65 to 66
+For TEMP59-> is a value from 70 to 71
+In Function :: Tree_RemoveRight
+For TEMP4-> is a value from 1 to 4
+For TEMP2-> is a value from 0 to 25
+For TEMP5-> is a value from 2 to 3
+For TEMP6-> is a value from 3 to 4
+For TEMP7-> is a value from 4 to 5
+For TEMP9-> is a value from 6 to 17
+For TEMP10-> is a value from 7 to 8
+For TEMP11-> is a value from 8 to 17
+For TEMP13-> is a value from 9 to 12
+For TEMP14-> is a value from 10 to 11
+For TEMP15-> is a value from 11 to 12
+For TEMP16-> is a value from 12 to 13
+For TEMP12-> is a value from 13 to 16
+For TEMP17-> is a value from 14 to 15
+For TEMP18-> is a value from 15 to 16
+For TEMP19-> is a value from 16 to 17
+For TEMP20-> is a value from 17 to 18
+For TEMP8-> is a value from 18 to 0
+For TEMP1-> is a value from 0 to 33
+For TEMP21-> is a value from 20 to 23
+For TEMP22-> is a value from 21 to 22
+For TEMP23-> is a value from 22 to 23
+For TEMP24-> is a value from 23 to 24
+For TEMP25-> is a value from 27 to 31
+For TEMP26-> is a value from 28 to 29
+For TEMP27-> is a value from 29 to 31
+For TEMP28-> is a value from 30 to 31
+For TEMP0-> is a value from 0 to 30
+For TEMP29-> is a value from 31 to 32
+For TEMP30-> is a value from 33 to 37
+For TEMP31-> is a value from 34 to 35
+For TEMP32-> is a value from 35 to 37
+For TEMP33-> is a value from 36 to 37
+For TEMP34-> is a value from 37 to 38
+For TEMP35-> is a value from 39 to 40
+In Function :: Tree_RemoveLeft
+For TEMP4-> is a value from 1 to 4
+For TEMP2-> is a value from 0 to 25
+For TEMP5-> is a value from 2 to 3
+For TEMP6-> is a value from 3 to 4
+For TEMP7-> is a value from 4 to 5
+For TEMP9-> is a value from 6 to 17
+For TEMP10-> is a value from 7 to 8
+For TEMP11-> is a value from 8 to 17
+For TEMP13-> is a value from 9 to 12
+For TEMP14-> is a value from 10 to 11
+For TEMP15-> is a value from 11 to 12
+For TEMP16-> is a value from 12 to 13
+For TEMP12-> is a value from 13 to 16
+For TEMP17-> is a value from 14 to 15
+For TEMP18-> is a value from 15 to 16
+For TEMP19-> is a value from 16 to 17
+For TEMP20-> is a value from 17 to 18
+For TEMP8-> is a value from 18 to 0
+For TEMP1-> is a value from 0 to 33
+For TEMP21-> is a value from 20 to 23
+For TEMP22-> is a value from 21 to 22
+For TEMP23-> is a value from 22 to 23
+For TEMP24-> is a value from 23 to 24
+For TEMP25-> is a value from 27 to 31
+For TEMP26-> is a value from 28 to 29
+For TEMP27-> is a value from 29 to 31
+For TEMP28-> is a value from 30 to 31
+For TEMP0-> is a value from 0 to 30
+For TEMP29-> is a value from 31 to 32
+For TEMP30-> is a value from 33 to 37
+For TEMP31-> is a value from 34 to 35
+For TEMP32-> is a value from 35 to 37
+For TEMP33-> is a value from 36 to 37
+For TEMP34-> is a value from 37 to 38
+For TEMP35-> is a value from 39 to 40
+In Function :: Tree_Search
+For TEMP3-> is a value from 1 to 58
+For TEMP0-> is a value from 0 to 1
+For TEMP5-> is a value from 2 to 3
+For TEMP4-> is a value from 3 to 58
+For TEMP7-> is a value from 4 to 5
+For TEMP6-> is a value from 5 to 60
+For TEMP9-> is a value from 7 to 10
+For TEMP10-> is a value from 8 to 9
+For TEMP11-> is a value from 9 to 10
+For TEMP12-> is a value from 10 to 11
+For TEMP8-> is a value from 11 to 35
+For TEMP14-> is a value from 12 to 13
+For TEMP15-> is a value from 13 to 14
+For TEMP13-> is a value from 14 to 15
+For TEMP16-> is a value from 15 to 16
+For TEMP1-> is a value from 0 to 58
+For TEMP17-> is a value from 17 to 20
+For TEMP18-> is a value from 18 to 19
+For TEMP19-> is a value from 19 to 20
+For TEMP20-> is a value from 20 to 21
+For TEMP21-> is a value from 22 to 25
+For TEMP22-> is a value from 23 to 24
+For TEMP23-> is a value from 24 to 25
+For TEMP24-> is a value from 25 to 26
+For TEMP25-> is a value from 28 to 29
+For TEMP27-> is a value from 32 to 33
+For TEMP28-> is a value from 33 to 34
+For TEMP26-> is a value from 34 to 35
+For TEMP29-> is a value from 35 to 36
+For TEMP30-> is a value from 37 to 40
+For TEMP31-> is a value from 38 to 39
+For TEMP32-> is a value from 39 to 40
+For TEMP33-> is a value from 40 to 41
+For TEMP34-> is a value from 42 to 45
+For TEMP35-> is a value from 43 to 44
+For TEMP36-> is a value from 44 to 45
+For TEMP37-> is a value from 45 to 46
+For TEMP38-> is a value from 48 to 49
+For TEMP39-> is a value from 52 to 53
+For TEMP40-> is a value from 54 to 55
+In Function :: Tree_Print
+For TEMP2-> is a value from 1 to 5
+For TEMP0-> is a value from 0 to 2
+For TEMP4-> is a value from 2 to 5
+For TEMP5-> is a value from 3 to 4
+For TEMP6-> is a value from 4 to 5
+For TEMP7-> is a value from 5 to 6
+For TEMP3-> is a value from 6 to 0
+For TEMP8-> is a value from 7 to 8
+In Function :: Tree_RecPrint
+For TEMP3-> is a value from 1 to 4
+For TEMP1-> is a value from 0 to 32
+For TEMP4-> is a value from 2 to 3
+For TEMP5-> is a value from 3 to 4
+For TEMP6-> is a value from 4 to 5
+For TEMP8-> is a value from 6 to 13
+For TEMP0-> is a value from 0 to 29
+For TEMP9-> is a value from 7 to 8
+For TEMP10-> is a value from 8 to 13
+For TEMP11-> is a value from 9 to 12
+For TEMP12-> is a value from 10 to 11
+For TEMP13-> is a value from 11 to 12
+For TEMP14-> is a value from 12 to 13
+For TEMP15-> is a value from 13 to 14
+For TEMP7-> is a value from 14 to 0
+For TEMP16-> is a value from 16 to 17
+For TEMP17-> is a value from 19 to 22
+For TEMP18-> is a value from 20 to 21
+For TEMP19-> is a value from 21 to 22
+For TEMP20-> is a value from 22 to 23
+For TEMP21-> is a value from 24 to 27
+For TEMP22-> is a value from 25 to 26
+For TEMP23-> is a value from 26 to 27
+For TEMP24-> is a value from 27 to 28
+For TEMP25-> is a value from 29 to 36
+For TEMP26-> is a value from 30 to 31
+For TEMP27-> is a value from 31 to 36
+For TEMP28-> is a value from 32 to 35
+For TEMP29-> is a value from 33 to 34
+For TEMP30-> is a value from 34 to 35
+For TEMP31-> is a value from 35 to 36
+For TEMP32-> is a value from 36 to 37
+For TEMP33-> is a value from 39 to 40
+For TEMP34-> is a value from 42 to 43
+MAIN [0] [10] [1] 
+	MOVE v1 4
+	MOVE s0 v1
+	MOVE s1 HALLOCATE s0
+	MOVE s0 s1
+	MOVE v1 4
+	MOVE s1 v1
+	MOVE s2 HALLOCATE s1
+	MOVE s1 s2
+	MOVE s2 BT_Start
+	HSTORE s0 0 s2 
+	HSTORE s1 0 s0 
+	MOVE s0 s1
+	HLOAD s1 s0 0 
+	HLOAD s2 s1 0 
+	ASTORE SPILLEDARG 0 t0
+	ASTORE SPILLEDARG 1 t1
+	ASTORE SPILLEDARG 2 t2
+	ASTORE SPILLEDARG 3 t3
+	ASTORE SPILLEDARG 4 t4
+	ASTORE SPILLEDARG 5 t5
+	ASTORE SPILLEDARG 6 t6
+	ASTORE SPILLEDARG 7 t7
+	ASTORE SPILLEDARG 8 t8
+	ASTORE SPILLEDARG 9 t9
+	MOVE a0 s0 
+	CALL s2 
+	ALOAD t0 SPILLEDARG 0 
+	ALOAD t1 SPILLEDARG 1 
+	ALOAD t2 SPILLEDARG 2 
+	ALOAD t3 SPILLEDARG 3 
+	ALOAD t4 SPILLEDARG 4 
+	ALOAD t5 SPILLEDARG 5 
+	ALOAD t6 SPILLEDARG 6 
+	ALOAD t7 SPILLEDARG 7 
+	ALOAD t8 SPILLEDARG 8 
+	ALOAD t9 SPILLEDARG 9 
+	MOVE s1 v0
+	PRINT s1 
+END
+//NOTSPILLED
+BT_Start [1] [18] [2] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+	MOVE v1 80
+	MOVE s0 v1
+	MOVE s1 HALLOCATE s0
+	MOVE s0 s1
+	MOVE v1 28
+	MOVE s1 v1
+	MOVE s2 HALLOCATE s1
+	MOVE s1 s2
+	MOVE s2 Tree_RecPrint
+	HSTORE s0 76 s2 
+	MOVE s2 Tree_Print
+	HSTORE s0 72 s2 
+	MOVE s2 Tree_Search
+	HSTORE s0 68 s2 
+	MOVE s2 Tree_RemoveLeft
+	HSTORE s0 64 s2 
+	MOVE s2 Tree_RemoveRight
+	HSTORE s0 60 s2 
+	MOVE s2 Tree_Remove
+	HSTORE s0 56 s2 
+	MOVE s2 Tree_Delete
+	HSTORE s0 52 s2 
+	MOVE s2 Tree_Insert
+	HSTORE s0 48 s2 
+	MOVE s2 Tree_Compare
+	HSTORE s0 44 s2 
+	MOVE s2 Tree_SetHas_Right
+	HSTORE s0 40 s2 
+	MOVE s2 Tree_SetHas_Left
+	HSTORE s0 36 s2 
+	MOVE s2 Tree_GetHas_Left
+	HSTORE s0 32 s2 
+	MOVE s2 Tree_GetHas_Right
+	HSTORE s0 28 s2 
+	MOVE s2 Tree_SetKey
+	HSTORE s0 24 s2 
+	MOVE s2 Tree_GetKey
+	HSTORE s0 20 s2 
+	MOVE s2 Tree_GetLeft
+	HSTORE s0 16 s2 
+	MOVE s2 Tree_GetRight
+	HSTORE s0 12 s2 
+	MOVE s2 Tree_SetLeft
+	HSTORE s0 8 s2 
+	MOVE s2 Tree_SetRight
+	HSTORE s0 4 s2 
+	MOVE s2 Tree_Init
+	HSTORE s0 0 s2 
+	MOVE v1 4
+	MOVE s2 v1
+	MOVE s3 s2
+L2
+	MOVE v1 27
+	MOVE s2 v1
+	MOVE s4 LE s3 s2 
+	CJUMP s4 L3 
+	MOVE s2 PLUS s1 s3 
+	MOVE v1 0
+	MOVE s4 v1
+	HSTORE s2 0 s4 
+	MOVE v1 4
+	MOVE s2 v1
+	MOVE s4 PLUS s3 s2 
+	MOVE s3 s4
+	JUMP L2 
+L3
+	HSTORE s1 0 s0 
+	MOVE s0 s1
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 0 
+	MOVE v1 16
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s1 s4
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 72 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s2 v0
+	MOVE s1 s2
+	MOVE v1 100000000
+	MOVE s1 v1
+	PRINT s1 
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 48 
+	MOVE v1 8
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s1 s4
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 72 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s2 v0
+	MOVE s1 s2
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 48 
+	MOVE v1 24
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s1 s4
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 48 
+	MOVE v1 4
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s1 s4
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 48 
+	MOVE v1 12
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s1 s4
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 48 
+	MOVE v1 20
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s1 s4
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 48 
+	MOVE v1 28
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s1 s4
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 48 
+	MOVE v1 14
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s1 s4
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 72 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s2 v0
+	MOVE s1 s2
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 68 
+	MOVE v1 24
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	PRINT s4 
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 68 
+	MOVE v1 12
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	PRINT s4 
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 68 
+	MOVE v1 16
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	PRINT s4 
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 68 
+	MOVE v1 50
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	PRINT s4 
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 68 
+	MOVE v1 12
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	PRINT s4 
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 52 
+	MOVE v1 12
+	MOVE s2 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s1 s4
+	MOVE s1 s0
+	HLOAD s2 s1 0 
+	HLOAD s3 s2 72 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s2 v0
+	MOVE s1 s2
+	MOVE s1 s0
+	HLOAD s0 s1 0 
+	HLOAD s2 s0 68 
+	MOVE v1 12
+	MOVE s0 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s0 
+	CALL s2 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s3 v0
+	PRINT s3 
+	MOVE v1 0
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_Init [2] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+	HSTORE s0 12 s1 
+	MOVE v1 0
+	MOVE s1 v1
+	HSTORE s0 16 s1 
+	MOVE v1 0
+	MOVE s1 v1
+	HSTORE s0 20 s1 
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_SetRight [2] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+	HSTORE s0 8 s1 
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_SetLeft [2] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+	HSTORE s0 4 s1 
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_GetRight [1] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+	HLOAD s1 s0 8 
+	MOVE v0 s1
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_GetLeft [1] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+	HLOAD s1 s0 4 
+	MOVE v0 s1
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_GetKey [1] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+	HLOAD s1 s0 12 
+	MOVE v0 s1
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_SetKey [2] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+	HSTORE s0 12 s1 
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_GetHas_Right [1] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+	HLOAD s1 s0 20 
+	MOVE v0 s1
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_GetHas_Left [1] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+	HLOAD s1 s0 16 
+	MOVE v0 s1
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_SetHas_Left [2] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+	HSTORE s0 16 s1 
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_SetHas_Right [2] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+	HSTORE s0 20 s1 
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_Compare [3] [18] [0] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s1 a1
+MOVE s0 a2
+	MOVE v1 0
+	MOVE s2 v1
+	MOVE s3 s2
+	MOVE v1 1
+	MOVE s2 v1
+	MOVE s4 PLUS s0 s2 
+	MOVE s2 s4
+	MOVE v1 1
+	MOVE s4 v1
+	MOVE s5 MINUS s0 s4 
+	MOVE s0 s5
+	MOVE s4 LE s1 s0 
+	CJUMP s4 L4 
+	MOVE v1 0
+	MOVE s0 v1
+	MOVE s3 s0
+	JUMP L5 
+L4
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE s4 MINUS s2 s0 
+	MOVE s0 s4
+	MOVE v1 1
+	MOVE s2 v1
+	MOVE s4 LE s1 s0 
+	MOVE s0 MINUS s2 s4 
+	CJUMP s0 L6 
+	MOVE v1 0
+	MOVE s0 v1
+	MOVE s3 s0
+	JUMP L7 
+L6
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE s3 s0
+L7
+	NOOP
+L5
+	NOOP
+	MOVE v0 s3
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_Insert [2] [18] [2] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s1 a0
+MOVE s0 a1
+	MOVE v1 80
+	MOVE s2 v1
+	MOVE s3 HALLOCATE s2
+	MOVE s2 s3
+	MOVE v1 28
+	MOVE s3 v1
+	MOVE s4 HALLOCATE s3
+	MOVE s3 s4
+	MOVE s4 Tree_RecPrint
+	HSTORE s2 76 s4 
+	MOVE s4 Tree_Print
+	HSTORE s2 72 s4 
+	MOVE s4 Tree_Search
+	HSTORE s2 68 s4 
+	MOVE s4 Tree_RemoveLeft
+	HSTORE s2 64 s4 
+	MOVE s4 Tree_RemoveRight
+	HSTORE s2 60 s4 
+	MOVE s4 Tree_Remove
+	HSTORE s2 56 s4 
+	MOVE s4 Tree_Delete
+	HSTORE s2 52 s4 
+	MOVE s4 Tree_Insert
+	HSTORE s2 48 s4 
+	MOVE s4 Tree_Compare
+	HSTORE s2 44 s4 
+	MOVE s4 Tree_SetHas_Right
+	HSTORE s2 40 s4 
+	MOVE s4 Tree_SetHas_Left
+	HSTORE s2 36 s4 
+	MOVE s4 Tree_GetHas_Left
+	HSTORE s2 32 s4 
+	MOVE s4 Tree_GetHas_Right
+	HSTORE s2 28 s4 
+	MOVE s4 Tree_SetKey
+	HSTORE s2 24 s4 
+	MOVE s4 Tree_GetKey
+	HSTORE s2 20 s4 
+	MOVE s4 Tree_GetLeft
+	HSTORE s2 16 s4 
+	MOVE s4 Tree_GetRight
+	HSTORE s2 12 s4 
+	MOVE s4 Tree_SetLeft
+	HSTORE s2 8 s4 
+	MOVE s4 Tree_SetRight
+	HSTORE s2 4 s4 
+	MOVE s4 Tree_Init
+	HSTORE s2 0 s4 
+	MOVE v1 4
+	MOVE s4 v1
+	MOVE s5 s4
+L8
+	MOVE v1 27
+	MOVE s4 v1
+	MOVE s6 LE s5 s4 
+	CJUMP s6 L9 
+	MOVE s4 PLUS s3 s5 
+	MOVE v1 0
+	MOVE s6 v1
+	HSTORE s4 0 s6 
+	MOVE v1 4
+	MOVE s4 v1
+	MOVE s6 PLUS s5 s4 
+	MOVE s5 s6
+	JUMP L8 
+L9
+	HSTORE s3 0 s2 
+	MOVE s2 s3
+	MOVE s3 s2
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 0 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	MOVE a1 s0 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s3 s4
+	MOVE s3 s1
+	MOVE v1 1
+	MOVE s1 v1
+	MOVE s4 s1
+L10
+	CJUMP s4 L11 
+	MOVE s1 s3
+	HLOAD s5 s1 0 
+	HLOAD s6 s5 20 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	MOVE s1 s5
+	MOVE v1 1
+	MOVE s5 v1
+	MOVE s6 MINUS s1 s5 
+	MOVE s1 s6
+	MOVE s5 LE s0 s1 
+	CJUMP s5 L12 
+	MOVE s1 s3
+	HLOAD s5 s1 0 
+	HLOAD s6 s5 32 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	CJUMP s5 L14 
+	MOVE s1 s3
+	HLOAD s5 s1 0 
+	HLOAD s6 s5 16 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	MOVE s3 s5
+	JUMP L15 
+L14
+	MOVE v1 0
+	MOVE s1 v1
+	MOVE s4 s1
+	MOVE s1 s3
+	HLOAD s5 s1 0 
+	HLOAD s6 s5 36 
+	MOVE v1 1
+	MOVE s5 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s5 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s7 v0
+	MOVE s3 s7
+	MOVE s1 s3
+	HLOAD s5 s1 0 
+	HLOAD s6 s5 8 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	MOVE s3 s5
+L15
+	NOOP
+	JUMP L13 
+L12
+	MOVE s1 s3
+	HLOAD s5 s1 0 
+	HLOAD s6 s5 28 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	CJUMP s5 L16 
+	MOVE s1 s3
+	HLOAD s5 s1 0 
+	HLOAD s6 s5 12 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	MOVE s3 s5
+	JUMP L17 
+L16
+	MOVE v1 0
+	MOVE s1 v1
+	MOVE s4 s1
+	MOVE s1 s3
+	HLOAD s5 s1 0 
+	HLOAD s6 s5 40 
+	MOVE v1 1
+	MOVE s5 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s5 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s7 v0
+	MOVE s3 s7
+	MOVE s1 s3
+	HLOAD s5 s1 0 
+	HLOAD s6 s5 4 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	MOVE a1 s2 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	MOVE s3 s5
+L17
+	NOOP
+L13
+	NOOP
+	JUMP L10 
+L11
+	NOOP
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_Delete [2] [18] [3] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+	MOVE s2 s0
+	MOVE s3 s0
+	MOVE v1 1
+	MOVE s4 v1
+	MOVE s5 s4
+	MOVE v1 0
+	MOVE s4 v1
+	MOVE s6 s4
+	MOVE v1 1
+	MOVE s4 v1
+	MOVE s7 s4
+L18
+	CJUMP s5 L19 
+	MOVE s4 s2
+	HLOAD t0 s4 0 
+	HLOAD t1 t0 20 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s4 
+	CALL t1 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE t0 v0
+	MOVE s4 t0
+	MOVE v1 1
+	MOVE t0 v1
+	MOVE t1 MINUS s4 t0 
+	MOVE t0 t1
+	MOVE t1 LE s1 t0 
+	CJUMP t1 L20 
+	MOVE t0 s2
+	HLOAD t1 t0 0 
+	HLOAD t2 t1 32 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 t0 
+	CALL t2 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE t1 v0
+	CJUMP t1 L22 
+	MOVE s3 s2
+	MOVE t0 s2
+	HLOAD t1 t0 0 
+	HLOAD t2 t1 16 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 t0 
+	CALL t2 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE t1 v0
+	MOVE s2 t1
+	JUMP L23 
+L22
+	MOVE v1 0
+	MOVE t0 v1
+	MOVE s5 t0
+L23
+	NOOP
+	JUMP L21 
+L20
+	MOVE v1 1
+	MOVE t0 v1
+	MOVE t1 MINUS s1 t0 
+	MOVE t0 t1
+	MOVE t1 LE s4 t0 
+	CJUMP t1 L24 
+	MOVE s4 s2
+	HLOAD t0 s4 0 
+	HLOAD t1 t0 28 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s4 
+	CALL t1 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE t0 v0
+	CJUMP t0 L26 
+	MOVE s3 s2
+	MOVE s4 s2
+	HLOAD t0 s4 0 
+	HLOAD t1 t0 12 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s4 
+	CALL t1 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE t0 v0
+	MOVE s2 t0
+	JUMP L27 
+L26
+	MOVE v1 0
+	MOVE s4 v1
+	MOVE s5 s4
+L27
+	NOOP
+	JUMP L25 
+L24
+	CJUMP s7 L28 
+	MOVE v1 0
+	MOVE s4 v1
+	MOVE t0 s4
+	MOVE v1 1
+	MOVE s4 v1
+	MOVE t1 s2
+	HLOAD t2 t1 0 
+	HLOAD t3 t2 28 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 t1 
+	CALL t3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE t2 v0
+	MOVE t1 MINUS s4 t2 
+	CJUMP t1 L32 
+	MOVE v1 1
+	MOVE s4 v1
+	MOVE t1 s2
+	HLOAD t2 t1 0 
+	HLOAD t3 t2 32 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 t1 
+	CALL t3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE t2 v0
+	MOVE t1 MINUS s4 t2 
+	CJUMP t1 L32 
+	MOVE v1 1
+	MOVE s4 v1
+	MOVE t0 s4
+L32
+	NOOP
+	CJUMP t0 L30 
+	MOVE v1 1
+	MOVE s4 v1
+	MOVE t0 s4
+	JUMP L31 
+L30
+	MOVE s4 s0
+	HLOAD t0 s4 0 
+	HLOAD t1 t0 56 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s4 
+	MOVE a1 s3 
+	MOVE a2 s2 
+	CALL t1 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE t0 v0
+	MOVE t0 t0
+L31
+	NOOP
+	JUMP L29 
+L28
+	MOVE s4 s0
+	HLOAD t0 s4 0 
+	HLOAD t1 t0 56 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s4 
+	MOVE a1 s3 
+	MOVE a2 s2 
+	CALL t1 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE t0 v0
+	MOVE t0 t0
+L29
+	NOOP
+	MOVE v1 1
+	MOVE s4 v1
+	MOVE s6 s4
+	MOVE v1 0
+	MOVE s4 v1
+	MOVE s5 s4
+L25
+	NOOP
+L21
+	NOOP
+	MOVE v1 0
+	MOVE s4 v1
+	MOVE s7 s4
+	JUMP L18 
+L19
+	NOOP
+	MOVE v0 s6
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_Remove [3] [18] [3] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s1 a0
+MOVE s2 a1
+MOVE s0 a2
+	MOVE s3 s0
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 32 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	CJUMP s4 L33 
+	MOVE s3 s1
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 64 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	MOVE a1 s2 
+	MOVE a2 s0 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s3 s4
+	JUMP L34 
+L33
+	MOVE s3 s0
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 28 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	CJUMP s4 L35 
+	MOVE s3 s1
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 60 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	MOVE a1 s2 
+	MOVE a2 s0 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s3 s4
+	JUMP L36 
+L35
+	MOVE s3 s0
+	HLOAD s0 s3 0 
+	HLOAD s4 s0 20 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s0 v0
+	MOVE s3 s0
+	MOVE s0 s2
+	HLOAD s4 s0 0 
+	HLOAD s5 s4 16 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s0 s4
+	HLOAD s4 s0 0 
+	HLOAD s5 s4 20 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s0 s4
+	MOVE s4 s1
+	HLOAD s5 s4 0 
+	HLOAD s6 s5 44 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s4 
+	MOVE a1 s3 
+	MOVE a2 s0 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	CJUMP s5 L37 
+	MOVE s0 s2
+	HLOAD s3 s0 0 
+	HLOAD s4 s3 8 
+	HLOAD s3 s1 24 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	MOVE a1 s3 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	MOVE s3 s5
+	MOVE s0 s2
+	HLOAD s3 s0 0 
+	HLOAD s4 s3 36 
+	MOVE v1 0
+	MOVE s3 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	MOVE a1 s3 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	MOVE s3 s5
+	JUMP L38 
+L37
+	MOVE s0 s2
+	HLOAD s3 s0 0 
+	HLOAD s4 s3 4 
+	HLOAD s3 s1 24 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	MOVE a1 s3 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s1 v0
+	MOVE s3 s1
+	MOVE s0 s2
+	HLOAD s1 s0 0 
+	HLOAD s2 s1 40 
+	MOVE v1 0
+	MOVE s1 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	MOVE a1 s1 
+	CALL s2 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s3 v0
+	MOVE s3 s3
+L38
+	NOOP
+L36
+	NOOP
+L34
+	NOOP
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_RemoveRight [3] [18] [2] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s2 a0
+MOVE s1 a1
+MOVE s0 a2
+L39
+	MOVE s3 s0
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 28 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	CJUMP s4 L40 
+	MOVE s3 s0
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 24 
+	MOVE s4 s0
+	HLOAD s6 s4 0 
+	HLOAD s7 s6 12 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s4 
+	CALL s7 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s6 v0
+	MOVE s4 s6
+	HLOAD s6 s4 0 
+	HLOAD s7 s6 20 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s4 
+	CALL s7 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s6 v0
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	MOVE a1 s6 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s3 s4
+	MOVE s1 s0
+	MOVE s3 s0
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 12 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s0 s4
+	JUMP L39 
+L40
+	NOOP
+	MOVE s0 s1
+	HLOAD s3 s0 0 
+	HLOAD s4 s3 4 
+	HLOAD s3 s2 24 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	MOVE a1 s3 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s2 v0
+	MOVE s3 s2
+	MOVE s0 s1
+	HLOAD s1 s0 0 
+	HLOAD s2 s1 40 
+	MOVE v1 0
+	MOVE s1 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	MOVE a1 s1 
+	CALL s2 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s3 v0
+	MOVE s3 s3
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_RemoveLeft [3] [18] [2] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s2 a0
+MOVE s1 a1
+MOVE s0 a2
+L41
+	MOVE s3 s0
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 32 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	CJUMP s4 L42 
+	MOVE s3 s0
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 24 
+	MOVE s4 s0
+	HLOAD s6 s4 0 
+	HLOAD s7 s6 16 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s4 
+	CALL s7 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s6 v0
+	MOVE s4 s6
+	HLOAD s6 s4 0 
+	HLOAD s7 s6 20 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s4 
+	CALL s7 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s6 v0
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	MOVE a1 s6 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s3 s4
+	MOVE s1 s0
+	MOVE s3 s0
+	HLOAD s4 s3 0 
+	HLOAD s5 s4 16 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	CALL s5 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s4 v0
+	MOVE s0 s4
+	JUMP L41 
+L42
+	NOOP
+	MOVE s0 s1
+	HLOAD s3 s0 0 
+	HLOAD s4 s3 8 
+	HLOAD s3 s2 24 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	MOVE a1 s3 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s2 v0
+	MOVE s3 s2
+	MOVE s0 s1
+	HLOAD s1 s0 0 
+	HLOAD s2 s1 36 
+	MOVE v1 0
+	MOVE s1 v1
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	MOVE a1 s1 
+	CALL s2 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s3 v0
+	MOVE s3 s3
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_Search [2] [18] [1] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+	MOVE s2 s0
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE s3 s0
+	MOVE v1 0
+	MOVE s0 v1
+	MOVE s4 s0
+L43
+	CJUMP s3 L44 
+	MOVE s0 s2
+	HLOAD s5 s0 0 
+	HLOAD s6 s5 20 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	MOVE s0 s5
+	MOVE v1 1
+	MOVE s5 v1
+	MOVE s6 MINUS s0 s5 
+	MOVE s5 s6
+	MOVE s6 LE s1 s5 
+	CJUMP s6 L45 
+	MOVE s5 s2
+	HLOAD s6 s5 0 
+	HLOAD s7 s6 32 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s5 
+	CALL s7 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s6 v0
+	CJUMP s6 L47 
+	MOVE s5 s2
+	HLOAD s6 s5 0 
+	HLOAD s7 s6 16 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s5 
+	CALL s7 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s6 v0
+	MOVE s2 s6
+	JUMP L48 
+L47
+	MOVE v1 0
+	MOVE s5 v1
+	MOVE s3 s5
+L48
+	NOOP
+	JUMP L46 
+L45
+	MOVE v1 1
+	MOVE s5 v1
+	MOVE s6 MINUS s1 s5 
+	MOVE s5 s6
+	MOVE s6 LE s0 s5 
+	CJUMP s6 L49 
+	MOVE s0 s2
+	HLOAD s5 s0 0 
+	HLOAD s6 s5 28 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	CJUMP s5 L51 
+	MOVE s0 s2
+	HLOAD s5 s0 0 
+	HLOAD s6 s5 12 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s0 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	MOVE s2 s5
+	JUMP L52 
+L51
+	MOVE v1 0
+	MOVE s0 v1
+	MOVE s3 s0
+L52
+	NOOP
+	JUMP L50 
+L49
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE s4 s0
+	MOVE v1 0
+	MOVE s0 v1
+	MOVE s3 s0
+L50
+	NOOP
+L46
+	NOOP
+	JUMP L43 
+L44
+	NOOP
+	MOVE v0 s4
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_Print [1] [18] [2] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+	MOVE s1 s0
+	MOVE s2 s0
+	HLOAD s0 s2 0 
+	HLOAD s3 s0 76 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s2 
+	MOVE a1 s1 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s0 v0
+	MOVE s1 s0
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
+Tree_RecPrint [2] [18] [2] 
+	ASTORE SPILLEDARG 0 s0
+	ASTORE SPILLEDARG 1 s1
+	ASTORE SPILLEDARG 2 s2
+	ASTORE SPILLEDARG 3 s3
+	ASTORE SPILLEDARG 4 s4
+	ASTORE SPILLEDARG 5 s5
+	ASTORE SPILLEDARG 6 s6
+	ASTORE SPILLEDARG 7 s7
+MOVE s1 a0
+MOVE s0 a1
+	MOVE s2 s0
+	HLOAD s3 s2 0 
+	HLOAD s4 s3 32 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s2 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s3 v0
+	CJUMP s3 L53 
+	MOVE s2 s1
+	HLOAD s3 s2 0 
+	HLOAD s4 s3 76 
+	MOVE s3 s0
+	HLOAD s5 s3 0 
+	HLOAD s6 s5 16 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s3 
+	CALL s6 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s5 v0
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s2 
+	MOVE a1 s5 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s3 v0
+	MOVE s2 s3
+	JUMP L54 
+L53
+	MOVE v1 1
+	MOVE s2 v1
+	MOVE s2 s2
+L54
+	NOOP
+	MOVE s2 s0
+	HLOAD s3 s2 0 
+	HLOAD s4 s3 20 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s2 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s3 v0
+	PRINT s3 
+	MOVE s2 s0
+	HLOAD s3 s2 0 
+	HLOAD s4 s3 28 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s2 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s3 v0
+	CJUMP s3 L55 
+	MOVE s2 s1
+	HLOAD s1 s2 0 
+	HLOAD s3 s1 76 
+	MOVE s1 s0
+	HLOAD s0 s1 0 
+	HLOAD s4 s0 12 
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s1 
+	CALL s4 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s0 v0
+	ASTORE SPILLEDARG 8 t0
+	ASTORE SPILLEDARG 9 t1
+	ASTORE SPILLEDARG 10 t2
+	ASTORE SPILLEDARG 11 t3
+	ASTORE SPILLEDARG 12 t4
+	ASTORE SPILLEDARG 13 t5
+	ASTORE SPILLEDARG 14 t6
+	ASTORE SPILLEDARG 15 t7
+	ASTORE SPILLEDARG 16 t8
+	ASTORE SPILLEDARG 17 t9
+	MOVE a0 s2 
+	MOVE a1 s0 
+	CALL s3 
+	ALOAD t0 SPILLEDARG 8 
+	ALOAD t1 SPILLEDARG 9 
+	ALOAD t2 SPILLEDARG 10 
+	ALOAD t3 SPILLEDARG 11 
+	ALOAD t4 SPILLEDARG 12 
+	ALOAD t5 SPILLEDARG 13 
+	ALOAD t6 SPILLEDARG 14 
+	ALOAD t7 SPILLEDARG 15 
+	ALOAD t8 SPILLEDARG 16 
+	ALOAD t9 SPILLEDARG 17 
+	MOVE s1 v0
+	MOVE s2 s1
+	JUMP L56 
+L55
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE s2 s0
+L56
+	NOOP
+	MOVE v1 1
+	MOVE s0 v1
+	MOVE v0 s0
+	ALOAD s0 SPILLEDARG 0
+	ALOAD s1 SPILLEDARG 1
+	ALOAD s2 SPILLEDARG 2
+	ALOAD s3 SPILLEDARG 3
+	ALOAD s4 SPILLEDARG 4
+	ALOAD s5 SPILLEDARG 5
+	ALOAD s6 SPILLEDARG 6
+	ALOAD s7 SPILLEDARG 7
+END
+//NOTSPILLED
