@@ -26,12 +26,11 @@ class Tuple {
     }
 
     public void print(){
+        System.out.print("For " + var + "->");
         if(isArg == 0){
             System.out.println(" is a value from "+this.first + " to " + this.second);
         }
-        else{
-            System.out.println(" is an argument from "+this.first + " to " + this.second);
-        }
+        
     }
 
 }
@@ -87,6 +86,8 @@ class MethodTable{
     int regBaseT;
     //Start of spilled temps in Stack
     int spillBase;
+    //no of arguments defined in block 0
+    int argDef;
 
     MethodTable(){
 
@@ -110,6 +111,7 @@ class MethodTable{
         this.regBaseS = 0;
         this.regBaseT = 0;
         this.spillBase = 0;
+        this.argDef = 0;
     }
 
     MethodTable(String fName,String argCnt){
@@ -133,6 +135,7 @@ class MethodTable{
         this.regBaseS = 0;
         this.regBaseT = 0;
         this.spillBase = 0;
+        this.argDef = 0;
     }
 
     void setBlock(int addr){curr_block = blockMap.get(addr);}
@@ -173,7 +176,8 @@ class MethodTable{
         //Add a special block for the method arguments as def in block 0- only allocate upto 4 regs
         //rest are already spilt
         BlockTable special = new BlockTable();
-        for(int i = 0;i < Math.min(Integer.parseInt(this.argCnt),4);++i){
+        this.argDef = Math.min(4,Integer.parseInt(this.argCnt));
+        for(int i = 0;i < this.argDef;++i){
             special.def.add("TEMP" + i);            
         }
         //Block 1 is successor of block 0
@@ -220,13 +224,13 @@ class MethodTable{
                    
         }while(flag);
         //System.out.println("Iterations = " + iter);
+
         //Update live ranges
         this.updateLiveRanges();
-        //this.debugLiveRanges();
     }
 
     int getEnd(String str){
-        //return last in
+        //return last in as end
         int ans = 0;
         for(int j = this.blockCnt - 1; j>=0; --j){
             if(blockMap.get(j).in.contains(str)){ans = j;
@@ -238,9 +242,6 @@ class MethodTable{
 
     int getStart(String str){
         //return first def as start
-
-        //int []ans = new int[2];
-        //int ansUse = this.blockCnt;
         int ansDef = this.blockCnt;
 
         for(int j = 0;j<this.blockCnt;++j){
@@ -248,17 +249,10 @@ class MethodTable{
         }
 
         /* for(int j = 0;j<this.blockCnt;++j){
-            if(blockMap.get(j).use.contains(str)){ansUse = j;break;}
-        } */
-
-        /* if(ansDef < ansUse){
-            ans[0] = 0;
-            ans[1] = ansDef;
-            return ans;}
-        else{
-            ans[0] = 1;
-            ans[1] = ansUse;
-            return ans;
+            if(blockMap.get(j).in.contains(str)){
+                ansIn = j-1;
+                break;
+            }
         } */
 
         return ansDef;
@@ -267,8 +261,13 @@ class MethodTable{
     
     void updateLiveRanges(){
         
+        //Remove all arguments from TEMP<4> to TEMP<argCnt> from allTemps
+        for(int i = 4;i < Integer.parseInt(this.argCnt);++i){
+            this.allTemps.remove(("TEMP"+Integer.toString(i)));
+        }
+
         Iterator<String> itr = this.allTemps.iterator();
-        
+        //System.out.println(allTemps);
         while(itr.hasNext()){
             String str = itr.next();
             int start = this.getStart(str);
@@ -276,6 +275,8 @@ class MethodTable{
             Tuple active_range = new Tuple(str,start,end);
             liveIntervalMap.put(str, active_range);
         }
+
+        //this.debugLiveRanges();
     }
     
     void doLinearScan(){
@@ -312,6 +313,8 @@ class MethodTable{
                 liveIntervals.add(pos,curr_range);
             }
         }
+
+        //this.debugLiveIntervalArray(liveIntervals);
 
         //Linear Scan Allocation
         for(int i = 0;i< liveIntervals.size();++i){
@@ -470,7 +473,12 @@ class MethodTable{
 
     void debugLiveRanges(){
         System.out.println("In Function :: "+ this.fName);
-        liveIntervalMap.forEach((k,v)->{System.out.print("For " + k + "->");v.print();});
+        liveIntervalMap.forEach((k,v)->{v.print();});
+    }
+
+    void debugLiveIntervalArray(ArrayList<Tuple> arr){
+        System.out.println("Printing live intervals before linear scan(sorted)");
+        arr.forEach((n)->{n.print();});
     }
 
     void debugLinearScan(){
@@ -629,7 +637,8 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         n.f2.accept(this,(A)"2");
 
         System.out.println("END");
-        System.out.println("//SPILL STATUS " + T.curr_method.spillFlag);
+        if(T.curr_method.spillFlag)System.out.println("//SPILLED");
+        else System.out.println("//NOTSPILLED");
         T.curr_method = null;
 
         n.f3.accept(this,(A)"2");
@@ -718,8 +727,8 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                               + T.curr_method.maxCallArgCnt + "] " );
             
             n.f4.accept(this, argu);
-
-            System.out.println("//SPILL STATUS = " + T.curr_method.spillFlag);
+            if(T.curr_method.spillFlag)System.out.println("//SPILLED");
+            else System.out.println("//NOTSPILLED");
             T.curr_method = null;
             break;
         }
@@ -1035,12 +1044,30 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                 }
                 else{
                     //register is spilled->return v0
-                    if(argu.toString().equals("2"))
+                    if(argu.toString().equals("2")){
                         System.out.println("\tALOAD v0 SPILLEDARG " + T.curr_method.spillMap.get(str));
-                    _ret = (R)("v0");
+                        _ret = (R)("v0");
+                    }
+                        
                 }
             }
+            else{
+                //Check if element is an integer, if yes move it to v1 and return v1
+                if(argu.toString().equals("2")){
+                    try{
+                        int x = Integer.parseInt(str);
+                        System.out.println("\tMOVE v1 "+ str);
+                        _ret = (R)("v1");
+                    }
+                    catch(Exception e){
+                        //do nothing to _ret value
+                        _ret = (R)str;
+                    }
+                }
+                
+            }
         }
+
         return _ret;
     }
 
