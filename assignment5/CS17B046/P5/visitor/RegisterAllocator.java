@@ -957,7 +957,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                 }
             }
             else{
-                //dont load at all
+                //dont load at all-temp 1 is unused
             }
         }
 
@@ -998,7 +998,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                 System.out.println("\tASTORE SPILLEDARG " + T.curr_method.spillMap.get(tmp1) + " v1 ");
             }
             else{
-                //do nothing
+                //do nothing- temp is unused
             }
         }
 
@@ -1245,6 +1245,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
     * f1 -> SimpleExp()
     */
     public R visit(HAllocate n, A argu) {
+        //HAllocate with a padding of 8 bytes
         R _ret=null;
         String inst0 = "";
         String inst1 = "";
@@ -1256,11 +1257,13 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                 //Temporary
                 if(T.curr_method.regMap.containsKey(inst1)){
                     //has register value
-                    _ret = (R)("HALLOCATE "  + T.curr_method.regMap.get(inst1));
+                    System.out.println("\tMOVE v0 PLUS " +T.curr_method.regMap.get(inst1)+ " 8 " );
+                    _ret = (R)("HALLOCATE v0 ");
                 }else{
                     //has been spilled
                     System.out.println("\tALOAD v0 SPILLEDARG " + T.curr_method.spillMap.get(inst1));
-                    _ret = (R)("HALLOCATE v0");
+                    System.out.println("\tMOVE v0 PLUS v0 8 ");
+                    _ret = (R)("HALLOCATE v0 ");
                 }
             }else{
                 //Integer literal or label
