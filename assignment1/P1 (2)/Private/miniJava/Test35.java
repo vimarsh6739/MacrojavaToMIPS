@@ -1,1 +1,0 @@
-class Test35 { public static void main ( String [ ] a ) { System.out.println ( new TestClass ( ).TestMethod ( )  ) ; } }  class TestClass {   public int TestMethod ( ) {   { System.out.println ( 1      ) ;     }     return 999   ; }    }     

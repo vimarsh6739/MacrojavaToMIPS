@@ -681,7 +681,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                 //Print label-need to check global??
                 if(argu.toString().equals("2")){
                     if(!label.equals("")){
-                        System.out.println(label);
+                        System.out.println(T.curr_method.fName + label);
                     }
                 }
 
@@ -809,11 +809,11 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
                 
                 if(T.curr_method.regMap.containsKey(tmp)){
                     //register mapped value
-                    System.out.println("\tCJUMP " + T.curr_method.regMap.get(tmp) + " " + label + " " );
+                    System.out.println("\tCJUMP " + T.curr_method.regMap.get(tmp) + " " +T.curr_method.fName + label + " " );
                 }else{
                     //tmp is a spilled value
                     System.out.println("\tALOAD v1 SPILLEDARG " + T.curr_method.spillMap.get(tmp));
-                    System.out.println("\tCJUMP v1 " + label);
+                    System.out.println("\tCJUMP v1 " + T.curr_method.fName + label);
                 }
             break;
         }
@@ -842,7 +842,7 @@ public class RegisterAllocator<R,A> extends GJDepthFirst<R,A> {
         }
 
         if(argu.toString().equals("2")){
-            System.out.println("\tJUMP " + label + " ");
+            System.out.println("\tJUMP " + T.curr_method.fName + label + " ");
         }
         return _ret;
     }
