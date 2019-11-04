@@ -5,8 +5,8 @@ public class P6 {
    public static void main(String [] args) {
       try {
 
-         microIRParser mip = new microIRParser(System.in);
-         Node root = microIRParser.Goal();
+         MiniRAParser mip = new MiniRAParser(System.in);
+         Node root = MiniRAParser.Goal();
          root.accept(new MIPSGenerator<String>()); 
       }
       catch (ParseException e) {

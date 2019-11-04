@@ -6,11 +6,11 @@
 
 javac P6.java
 
-for file in ./microIR/*
+for file in ./miniRA/*
 do
 	java P6 < $file >dump
 	echo "Testing $file..."
-	java -jar mars.jar <dump
+	#java -jar mars.jar <dump
 	echo "______________$file done _________________"
 	rm -rf dump
 done
