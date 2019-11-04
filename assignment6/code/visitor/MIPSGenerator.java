@@ -53,7 +53,8 @@ public class MIPSGenerator<R> extends GJNoArguDepthFirst<R> {
       maxArgCnt = Integer.parseInt(n.f8.accept(this).toString());
       
       System.out.println("\tmove $fp, $sp");
-      System.out.println("\tsubu $sp, $sp, "+(4 + 4*Math.max(maxArgCnt-4,0))+"");
+      System.out.println("\tsubu $sp, $sp, "+
+      (4*(2 + this.stackSlots + Math.max(0,this.maxArgCnt-4) ))+"");
       System.out.println("\tsw $ra, -4($fp)");
       
       n.f9.accept(this);
@@ -61,8 +62,9 @@ public class MIPSGenerator<R> extends GJNoArguDepthFirst<R> {
       n.f11.accept(this);
 
       System.out.println("\tlw $ra, -4($fp)");
-      System.out.println("\taddu $sp, $sp, "+(4 + 4*Math.max(maxArgCnt-4,0)));
-      System.out.println("\tj $ra\n");
+      System.out.println("\taddu $sp, $sp, " + 
+                        4*(2 + this.stackSlots + Math.max(this.maxArgCnt-4,0) - Math.max(this.argCnt-4,0)));
+      System.out.println("\tjr $ra\n");
 
       n.f12.accept(this);
       //other procedures start
@@ -78,7 +80,7 @@ public class MIPSGenerator<R> extends GJNoArguDepthFirst<R> {
          System.out.println("_halloc:");
          System.out.println("\tli $v0, 9");
          System.out.println("\tsyscall");
-         System.out.println("\tj $ra");
+         System.out.println("\tjr $ra");
          System.out.println("");
          //Print statement
          System.out.println("\t.text");
@@ -89,7 +91,7 @@ public class MIPSGenerator<R> extends GJNoArguDepthFirst<R> {
          System.out.println("\tla $a0, newl");
          System.out.println("\tli $v0, 4");
          System.out.println("\tsyscall");
-         System.out.println("\tj $ra");
+         System.out.println("\tjr $ra");
          System.out.println("");
          //newline
          System.out.println("\t.data");
@@ -166,7 +168,7 @@ public class MIPSGenerator<R> extends GJNoArguDepthFirst<R> {
                         4*(this.stackSlots + Math.max(this.maxArgCnt-4,0) - Math.max(this.argCnt-4,0)) + "($sp)");   
       System.out.println("\taddu $sp, $sp, " + 
                         4*(2+this.stackSlots + Math.max(this.maxArgCnt-4,0) - Math.max(this.argCnt-4,0)));
-      System.out.println("\tj $ra\n");
+      System.out.println("\tjr $ra\n");
       n.f12.accept(this);
       fName = "";argCnt = maxArgCnt = stackSlots = 0;
       return _ret;
@@ -252,10 +254,10 @@ public class MIPSGenerator<R> extends GJNoArguDepthFirst<R> {
       R _ret=null;
       String r1="",r2="";int pos4=0;
       n.f0.accept(this);
-      r1 = (String)n.f1.accept(this);
-      r2 = (String)n.f3.accept(this);
+      r1 = (String)n.f1.accept(this);//address
+      r2 = (String)n.f3.accept(this);//value
       pos4 = Integer.parseInt((String)n.f2.accept(this));
-      System.out.println("\tsw "+r1+", "+pos4+"("+r2+")");
+      System.out.println("\tsw "+r2+", "+pos4+"("+r1+")");
       return _ret;
    }
 
@@ -269,8 +271,8 @@ public class MIPSGenerator<R> extends GJNoArguDepthFirst<R> {
       R _ret=null;
       String r1,r2;int pos4 = 0;r1=r2="";
       n.f0.accept(this);
-      r1 = (String)n.f1.accept(this);
-      r2 = (String)n.f2.accept(this);
+      r1 = (String)n.f1.accept(this);//register temp
+      r2 = (String)n.f2.accept(this);//address
       pos4 = Integer.parseInt((String)n.f3.accept(this));
       System.out.println("\tlw "+ r1+", "+pos4+"("+r2+") ");
       return _ret;
@@ -326,7 +328,7 @@ public class MIPSGenerator<R> extends GJNoArguDepthFirst<R> {
       pos = Integer.parseInt(n.f2.accept(this).toString());
       //check if argument
       if(pos < Math.max(0,this.argCnt - 4))System.out.println("\tlw "+r+", "+(4*pos)+"($fp)");
-      else System.out.println("\tlw "+r+", "+(4*(pos + Math.max(this.maxArgCnt-4, 0))) + "($sp)");
+      else System.out.println("\tlw "+r+", "+(4*(pos - Math.max(0,this.argCnt-4)+ Math.max(this.maxArgCnt-4, 0))) + "($sp)");
       return _ret;
    }
 
@@ -344,7 +346,7 @@ public class MIPSGenerator<R> extends GJNoArguDepthFirst<R> {
       pos = Integer.parseInt(n.f1.accept(this).toString());
       r = n.f2.accept(this).toString();
       if(pos < Math.max(0,this.argCnt - 4))System.out.println("\tsw "+r+", "+(4*pos)+"($fp)");
-      else System.out.println("\tsw "+r+", "+(4*(pos + Math.max(this.maxArgCnt-4, 0))) + "($sp)");
+      else System.out.println("\tsw "+r+", "+(4*(pos + Math.max(this.maxArgCnt-4, 0) - Math.max(0, this.argCnt-4) )) + "($sp)");
       return _ret;
    }
 

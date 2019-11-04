@@ -42,7 +42,7 @@ L1:      nop
          jal _print
          lw $ra, -4($fp)
          addu $sp, $sp, 4
-         j $ra
+         jr $ra
 
          .text
          .globl           BBS_Start
@@ -90,7 +90,7 @@ BBS_Start:
          lw $ra, -4($fp)
          lw $fp, 8($sp)
          addu $sp, $sp, 16
-         j $ra
+         jr $ra
 
          .text
          .globl           BBS_Sort
@@ -269,7 +269,7 @@ L3:      nop
          lw $ra, -4($fp)
          lw $fp, 4($sp)
          addu $sp, $sp, 12
-         j $ra
+         jr $ra
 
          .text
          .globl           BBS_Print
@@ -316,7 +316,7 @@ L15:     nop
          lw $ra, -4($fp)
          lw $fp, 4($sp)
          addu $sp, $sp, 12
-         j $ra
+         jr $ra
 
          .text
          .globl           BBS_Init
@@ -642,14 +642,14 @@ L28:     nop
          lw $ra, -4($fp)
          lw $fp, 8($sp)
          addu $sp, $sp, 16
-         j $ra
+         jr $ra
 
          .text
          .globl _halloc
 _halloc:
          li $v0, 9
          syscall
-         j $ra
+         jr $ra
 
          .text
          .globl _print
@@ -659,7 +659,7 @@ _print:
          la $a0, newl
          li $v0, 4
          syscall
-         j $ra
+         jr $ra
 
          .data
          .align   0

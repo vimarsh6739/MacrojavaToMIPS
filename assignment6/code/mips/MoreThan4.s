@@ -7,17 +7,22 @@ main:
          li $a0 8
          jal _halloc
          move $t0 $v0
+         
          li $a0 4
          jal _halloc
          move $t1 $v0
+
          la $t2 MT4_Change
          sw $t2, 4($t0)
          la $t2 MT4_Start
          sw $t2, 0($t0)
          sw $t0, 0($t1)
+
          move $t0 $t1
+
          lw $t1 0($t0)
          lw $t2 0($t1)
+
          li $t1 1
          li $t3 2
          li $t4 3
@@ -69,6 +74,8 @@ MT4_Start:
          lw $v1, 8($fp)
          move $a0 $v1
          jal _print
+
+         
          move $t0 $s0
          lw $t1 0($t0)
          lw $t2 4($t1)
