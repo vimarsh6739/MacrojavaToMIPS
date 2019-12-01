@@ -26,6 +26,7 @@ define i32 @main() {
 	%_1 = bitcast i8* %_0 to i8***
 	%_2 = getelementptr [4 x i8*], [4 x i8*]* @.LS_vtable, i32 0, i32 0
 	store i8** %_2, i8*** %_1
+	
 	; LS.Start : 0
 	%_3 = bitcast i8* %_0 to i8***
 	%_4 = load i8**, i8*** %_3
@@ -326,11 +327,13 @@ loop17:
 		%_26 = load i32, i32* %k
 		%_27 = sub i32 %_26, 3
 		store i32 %_27, i32* %aux02
-		
+		;check array access
 		%_36 = getelementptr i8, i8* %this, i32 8
 		%_37 = bitcast i8* %_36 to i32**
 		%_38 = load i32*, i32** %_37
+		;this is local integer access in pexp
 		%_39 = load i32, i32* %j
+		;here now
 		%_28 = load i32, i32 *%_38
 		%_29 = icmp ult i32 %_39, %_28
 		br i1 %_29, label %oob33, label %oob34
@@ -341,6 +344,7 @@ oob33:
 		%_40 = load i32, i32* %aux01
 		%_41 = load i32, i32* %aux02
 		%_42 = add i32 %_40, %_41
+
 		store i32 %_42, i32* %_31
 		br label %oob35
 

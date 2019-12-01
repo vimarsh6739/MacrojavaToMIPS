@@ -268,10 +268,11 @@ define i1 @Tree.Init(i8* %this, i32 %.v_key) {
 	%v_key = alloca i32
 	store i32 %.v_key, i32* %v_key
 	%_0 = load i32, i32* %v_key
+	;this is global integer access in pexp
 	%_1 = getelementptr i8, i8* %this, i32 24
 	%_2 = bitcast i8* %_1 to i32*
 	store i32 %_0, i32* %_2
-	
+	;below 3 lines for pexp
 	%_3 = getelementptr i8, i8* %this, i32 28
 	%_4 = bitcast i8* %_3 to i1*
 	store i1 0, i1* %_4
@@ -1495,7 +1496,7 @@ if0:
 		%_17 = getelementptr i8, i8* %this, i32 16
 		%_18 = bitcast i8* %_17 to i8**
 		store i8* %_16, i8** %_18
-		
+		;evaluated in primary expression for object
 		%_19 = getelementptr i8, i8* %this, i32 16
 		%_20 = bitcast i8* %_19 to i8**
 		%_21 = load i8*, i8** %_20

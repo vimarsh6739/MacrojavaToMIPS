@@ -21,5 +21,12 @@
 		"prefix": "if(a",
 		"body": "if(argu.toString().equals(\"two\")){",
 		"description": "Saves me some time!"
+	},
+
+	"Speed_printer" : {
+		"scope": "java",
+		"prefix": "sop",
+		"body": "System.out.println(\"\\t\");",
+		"description": "Speed printer sop"
 	}
 }

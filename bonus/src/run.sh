@@ -6,26 +6,71 @@
 
 javac P7.java
 
+echo "TESTING PUBLIC TESTCASES:::"
 for file in ../minijava/*
 do
+	#echo "Expected output ::->"
+	javac -d ../bin $file  
+	java -cp ../bin $(basename -- ${file%.*}) > output1.out
 	cat $file | java P7 > Test.ll
-	echo "Testing $(basename -- $file)"
-	clang -o Test Test.ll && ./Test
+	#echo "LLVM output ::->"
+	clang -w -o Test Test.ll 
+	./Test > output2.out
+	cmp -l output1.out output2.out && echo "Testing $(basename -- $file) -> Testcase passed" || echo "Testing $(basename -- $file) -> Outputs dont match"
+	
 	echo "-------------------------"
-	rm -rf Test Test.ll
+	#rm -rf Test Test.ll output1.out output2.out
 done
 
-#Uncomment to run extra tests
+echo "CHECKING EXTRA TESTCASES::::"
 
-#echo "Checking extra testcases"
+for file in ../minijava-extra/*
+do
+	#echo "Testing $(basename -- $file)"
+	#echo "Expected output ::->"
+	javac -d ../bin $file
+	java -cp ../bin $(basename -- ${file%.*}) > output1.out
+	cat $file | java P7 > Test.ll
+	#echo "LLVM output ::->"
+	clang -w -o Test Test.ll 
+	./Test > output2.out
+	cmp -l output1.out output2.out && echo "Testing $(basename -- $file ) -> Testcase passed" || echo "Testing $(basename -- $file ) -> Outputs dont match"
+	echo "-------------------------"
+	#rm Test Test.ll output1.out output2.out
+done
 
-#for file in ../minijava-extra/*
-#do
-#	cat $file | P7 > Test.ll
-#	echo "Testing $(basename -- $file)"
-#	clang -o Test Test.ll && ./Test
-#	echo "-------------------------"
-#	rm Test Test.ll
-#done
+echo "CHECKING PRIVATE TESTCASES::::"
+
+for file in ../private/*
+do
+	echo 
+	#echo "Expected output ::->"
+	javac -d ../bin $file
+	java -cp ../bin $(basename -- ${file%.*}) > output1.out
+	cat $file | java P7 > Test.ll
+	#echo "LLVM output ::->"
+	clang -w -o Test Test.ll 
+	./Test > output2.out
+	cmp -l output1.out output2.out && echo "Testing $(basename -- $file ) -> Testcase passed" || echo "Testing $(basename -- $file ) -> Outputs dont match"
+	echo "-------------------------"
+	#rm Test Test.ll output1.out output2.out
+done
+
+echo "CHECKING HIDDEN TESTCASES::::"
+
+for file in ../hidden/*
+do
+
+	#echo "Expected output ::->"
+	javac -d ../bin $file
+	java -cp ../bin $(basename -- ${file%.*}) > output1.out
+	cat $file | java P7 > Test.ll
+	#echo "LLVM output ::->"
+	clang -w -o Test Test.ll 
+	./Test > output2.out
+	cmp -l output1.out output2.out && echo "Testing $(basename -- $file ) -> Testcase passed" || echo "Testing $(basename -- $file ) -> Outputs dont match"
+	echo "-------------------------"
+	#rm Test Test.ll output1.out output2.out
+done
 
 echo "Testing Done"
