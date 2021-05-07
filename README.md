@@ -1,5 +1,5 @@
 # MacrojavaToMIPS
-This repository contains a 5-pass compiler to convert [MiniJava](http://www.cse.iitm.ac.in/~krishna/cs3300/minijava-spec.html) to [MIPS Assembly](http://www.cse.iitm.ac.in/~krishna/cs3300/spim_ref.html).  
+This repository contains a 6-pass compiler to convert [MacroJava](https://www.cse.iitm.ac.in/~krishna/cs3300/macrojava-spec.html) to [MIPS Assembly](http://www.cse.iitm.ac.in/~krishna/cs3300/spim_ref.html).  
 
 Harry Potter will describe each assignment [here](http://www.cse.iitm.ac.in/~krishna/courses/2019/odd-cs3300/)!
 
